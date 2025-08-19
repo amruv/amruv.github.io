@@ -2,13 +2,10 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  images: {
-    unoptimized: true
-  },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/amruv.github.io' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/amruv.github.io' : '',
+  images: { unoptimized: true },
+  assetPrefix: '',
+  basePath: '',
 }
-
 module.exports = nextConfig
 
 
