@@ -7,23 +7,23 @@
     --background: #ECE3DB;
     --foreground: #CC5500;
     --card: #ECE3DB;
-    --card-foreground: 210 20% 98%;
-    /* --popover: 224 71.4% 4.1%;  */
-    /* --popover-foreground: 210 20% 98%; */
+    --card-foreground: #777777;
+    --popover: #ECE3DB; 
+    --popover-foreground: #777777;
     --primary: #CC5500;
-    /* --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
-    --radius: 0.75rem; */
+    --primary-foreground: #ECE3DB;
+    --secondary: #ECE3DB;
+    --secondary-foreground: #777777;
+    --muted: #232b33;
+    --muted-foreground: #2C3E50;
+    --accent: #232b33;
+    --accent-foreground: #f6f8fa;
+    --destructive: #993a2e;
+    --destructive-foreground: #f6f8fa;
+    --border: #777777;
+    --input: #ECE3DB;
+    --ring: #CC5500;
+    --radius: 0.75rem;
   }
 }
 
@@ -32,7 +32,7 @@
 }
 
 body {
-  color: hsl(var(--foreground));
+  color: #777777;
   background: #ECE3DB;
   font-feature-settings: "rlig" 1, "calt" 1;
 }

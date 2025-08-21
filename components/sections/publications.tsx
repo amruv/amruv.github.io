@@ -27,66 +27,6 @@ const publications = [
   year={2024}
 }`
     }
-  },
-  {
-    title: "Federated Learning with Differential Privacy: A Multi-Agent Reinforcement Learning Approach",
-    authors: ["Your Name", "Co-Author 1"],
-    venue: "International Conference on Machine Learning (ICML)",
-    year: "2024",
-    type: "Conference",
-    citations: 892,
-    abstract: "We propose a novel approach to federated learning that incorporates differential privacy through multi-agent reinforcement learning, ensuring both model performance and data privacy.",
-    tags: ["Federated Learning", "Privacy", "Reinforcement Learning"],
-    links: {
-      paper: "https://arxiv.org/abs/example",
-      code: "https://github.com/username/federated-rl",
-      bibtex: `@inproceedings{yourname2024federated,
-  title={Federated Learning with Differential Privacy: A Multi-Agent Reinforcement Learning Approach},
-  author={Your Name and Co-Author 1},
-  booktitle={International Conference on Machine Learning},
-  year={2024}
-}`
-    }
-  },
-  {
-    title: "Neural Architecture Search for Efficient Medical Image Analysis",
-    authors: ["Co-Author 1", "Your Name", "Co-Author 2", "Co-Author 3"],
-    venue: "Nature Machine Intelligence",
-    year: "2023",
-    type: "Journal",
-    citations: 1456,
-    abstract: "This work presents an automated neural architecture search framework specifically designed for medical image analysis, achieving state-of-the-art performance while maintaining computational efficiency.",
-    tags: ["Medical AI", "AutoML", "Computer Vision"],
-    links: {
-      paper: "https://nature.com/articles/example",
-      code: "https://github.com/username/medical-nas",
-      bibtex: `@article{coauthor2023neural,
-  title={Neural Architecture Search for Efficient Medical Image Analysis},
-  author={Co-Author 1 and Your Name and Co-Author 2 and Co-Author 3},
-  journal={Nature Machine Intelligence},
-  year={2023}
-}`
-    }
-  },
-  {
-    title: "Large-Scale Distributed Training of Graph Neural Networks",
-    authors: ["Your Name", "Co-Author 1", "Co-Author 2"],
-    venue: "International Conference on Learning Representations (ICLR)",
-    year: "2023",
-    type: "Conference",
-    citations: 734,
-    abstract: "We introduce a scalable framework for distributed training of graph neural networks on large-scale graphs, enabling efficient processing of graphs with billions of nodes and edges.",
-    tags: ["Graph Neural Networks", "Distributed Computing", "Scalability"],
-    links: {
-      paper: "https://arxiv.org/abs/example",
-      code: "https://github.com/username/distributed-gnn",
-      bibtex: `@inproceedings{yourname2023largescale,
-  title={Large-Scale Distributed Training of Graph Neural Networks},
-  author={Your Name and Co-Author 1 and Co-Author 2},
-  booktitle={International Conference on Learning Representations},
-  year={2023}
-}`
-    }
   }
 ]
 
