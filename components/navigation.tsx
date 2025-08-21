@@ -52,12 +52,12 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <motion.div 
-            className="text-xl font-bold text-primary"
+            className="text-2xl font-bold text-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Dr. [Your Name]
+            Sai Amruth Balusu
           </motion.div>
           
           <div className="hidden md:flex space-x-8">

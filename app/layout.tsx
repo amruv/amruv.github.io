@@ -5,15 +5,32 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Dr. [Your Name] - ML Researcher',
-  description: 'Personal website of Dr. [Your Name], Machine Learning Researcher specializing in transformers, computer vision, and distributed systems.',
+  metadataBase: new URL('https://amruv.github.io'),
+  title: 'Sai Amruth Balusu',
+  description: 'Personal website of Sai Amruth Balusu, Machine Learning Researcher specializing in transformers, computer vision, and distributed systems.',
   keywords: ['machine learning', 'AI research', 'deep learning', 'transformers', 'computer vision'],
-  authors: [{ name: 'Dr. [Your Name]' }],
+  authors: [{ name: 'Sai Amruth Balusu' }],
   openGraph: {
-    title: 'Dr. [Your Name] - ML Researcher',
+    title: 'Sai Amruth Balusu - ML Researcher',
     description: 'Personal website showcasing research, publications, and projects in machine learning.',
     type: 'website',
-  }
+    url: 'https://amruv.github.io',
+    siteName: 'Sai Amruth Balusu',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sai Amruth Balusu - ML Researcher',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sai Amruth Balusu - ML Researcher',
+    description: 'Personal website showcasing research, publications, and projects in machine learning.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function RootLayout({
