@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Github, Linkedin, Mail, Download } from 'lucide-react'
+import TypingAnimation from '@/components/ui/typing effect'
 
 const Hero = () => {
   return (
@@ -16,7 +17,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-primary">Dr. [Your Name]</span>
+            <TypingAnimation texts={["Sai Amruth Balusu."]} className="text-foreground" />
               <br />
               <span className="text-muted-foreground">ML Researcher</span>
             </h1>
