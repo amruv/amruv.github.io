@@ -54,7 +54,7 @@ const Experience = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20 md:left-1/2 md:transform md:-translate-x-px"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary md:left-1/2 md:transform md:-translate-x-px"></div>
 
           {experiences.map((exp, index) => (
             <motion.div

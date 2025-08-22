@@ -16,8 +16,8 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-            <TypingAnimation texts={["Sai Amruth Balusu."]} className="text-foreground" />
+            <h1 className="relative text-5xl lg:text-6xl font-bold mb-6">
+            <TypingAnimation texts={["Sai Amruth Balusu."]} className="text-primary" />
               <br />
               <span className="text-muted-foreground">ML Researcher</span>
             </h1>
