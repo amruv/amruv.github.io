@@ -4,15 +4,15 @@
 
 @layer base {
   :root {
-    --background: #ECE3DB;
+    --background: #FFFBEF;
     --foreground: #CC5500;
-    --card: #ECE3DB;
+    --card: #FFFBEF;
     --card-foreground: #777777;
-    --popover: #ECE3DB; 
+    --popover: #FFFBEF; 
     --popover-foreground: #777777;
     --primary: #CC5500;
-    --primary-foreground: #ECE3DB;
-    --secondary: #ECE3DB;
+    --primary-foreground: #FFFBEF;
+    --secondary: #FFFBEF;
     --secondary-foreground: #777777;
     --muted: #232b33;
     --muted-foreground: #2C3E50;
@@ -21,7 +21,7 @@
     --destructive: #993a2e;
     --destructive-foreground: #f6f8fa;
     --border: #777777;
-    --input: #ECE3DB;
+    --input: #FFFBEF;
     --ring: #CC5500;
     --radius: 0.75rem;
   }
