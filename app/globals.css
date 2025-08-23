@@ -27,13 +27,25 @@
   }
 }
 
+.test-font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.test-font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.test-font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
 * {
   border-color: hsl(var(--border));
 }
 
 body {
-  color: #777777;
-  background: #ECE3DB;
+  color: #2C3E50;
+  background: #FFFBEF;
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 

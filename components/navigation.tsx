@@ -65,14 +65,15 @@ const Navigation = () => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                  activeSection === item.id ? 'text-primary' : 'text-muted-foreground'
+                className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-accent ${
+                  activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
                 }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
               >
-                {item.label}
+                {/* active section underline */}
+                {item.label} 
                 {activeSection === item.id && (
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"

@@ -19,7 +19,7 @@ const Hero = () => {
             <h1 className="relative text-5xl lg:text-6xl font-bold mb-6">
             <TypingAnimation texts={["Sai Amruth Balusu."]} className="text-primary" />
               <br />
-              <span className="text-muted-foreground">ML Researcher</span>
+              <span className="text-accent test-font-poppins">ML Engineer</span>
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
