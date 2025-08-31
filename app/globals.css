@@ -39,6 +39,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+.test-font-courier {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 * {
   border-color: hsl(var(--border));
 }

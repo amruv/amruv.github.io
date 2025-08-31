@@ -52,7 +52,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <motion.div 
-            className="text-2xl font-bold text-primary"
+            className="text-2xl  text-primary test-font-courier"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -65,7 +65,7 @@ const Navigation = () => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-accent ${
+                className={`relative px-3 py-2 text-sm test-font-courier transition-colors hover:text-accent ${
                   activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
                 }`}
                 initial={{ opacity: 0, y: -20 }}
@@ -76,7 +76,7 @@ const Navigation = () => {
                 {item.label} 
                 {activeSection === item.id && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
                     layoutId="activeTab"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
