@@ -63,7 +63,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -72,7 +72,7 @@ const Hero = () => {
             <div className="w-full h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
               <div className="text-6xl text-primary/50">🧠</div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
