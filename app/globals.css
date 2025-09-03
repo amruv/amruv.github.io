@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   :root {
     --background: #FFFBEF;
@@ -27,6 +29,14 @@
   }
 }
 
+:root {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
 .test-font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }
@@ -41,6 +51,10 @@
 
 .test-font-courier {
   font-family: 'Courier New', Courier, monospace;
+}
+
+.test-font-mono {
+  font-family: 'JetBrains Mono', monospace
 }
 
 * {

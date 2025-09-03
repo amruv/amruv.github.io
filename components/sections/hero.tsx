@@ -16,13 +16,13 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="relative text-5xl lg:text-6xl font-bold mb-10">
+            <h1 className="relative text-5xl lg:text-5xl font-bold mb-10">
             <TypingAnimation texts={["Sai Amruth Balusu."]} className="text-primary test-font-courier" />
               <br />
-              <span className="text-accent test-font-inter">ML Engineer</span>
+              <span className="text-4xl text-accent test-font-mono">ML Engineer</span>
             </h1>
             
-            <p className="text-xl test-font-inter text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl test-font-mono text-muted-foreground mb-8 leading-relaxed">
               Passionate about advancing the frontiers of artificial intelligence through 
               cutting-edge research in machine learning, deep learning, and neural networks. 
               Currently focusing on transformer architectures and their applications in 
@@ -50,7 +50,7 @@ const Hero = () => {
                   <Github className="h-5 w-5" />
                 </Button>
               </a>
-              <a href="https://www.linkedin.com/in/sai-amruth-balusu-052a9521b" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/sai-amruth-balusu" target="_blank" rel="noopener noreferrer">
                 <Button size="icon" variant="ghost">
                   <Linkedin className="h-5 w-5" />
                 </Button>
