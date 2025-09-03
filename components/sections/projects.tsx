@@ -29,7 +29,7 @@ const projects: Project[] = [
       "Approach: Combine Federated Learning, Differential Privacy, and Homomorphic Encryption.",
       "Result: ~9x increase in privacy with a measured accuracy trade‑off."
     ],
-    // stats: { stars: "-", forks: "-", status: "Active" },
+    stats: { stars: "-", forks: "-", status: "Active" },
     technologies: ["Python", "AI", "Safety", "Reinforcement Learning [RL]", "Federated Learning"],
     github: "https://github.com/amruv/Private-AI",
     // demo: "https://github.com/amruv/Private-AI",
@@ -59,57 +59,57 @@ const projects: Project[] = [
     github: "https://github.com/username/nas-transformers",
     demo: "https://demo.example.com",
     gradient: "from-blue-500/20 to-purple-500/20"
-  },
-  {
-    category: "COMPUTER VISION", 
-    title: "Multi-Modal Medical Imaging",
-    description: "State-of-the-art model combining CT, MRI, and clinical data for early disease detection. Published in Nature Machine Intelligence.",
-    stats: { stars: "1.8k", forks: "234", status: "Research" },
-    technologies: ["TensorFlow", "MONAI", "Docker", "MLflow"],
-    github: "https://github.com/username/medical-imaging",
-    demo: "https://demo.example.com",
-    gradient: "from-green-500/20 to-teal-500/20"
-  },
-  {
-    category: "REINFORCEMENT LEARNING",
-    title: "Distributed Multi-Agent RL",
-    description: "Scalable framework for training multiple RL agents in complex environments. Supports up to 1000+ concurrent agents with efficient communication.",
-    stats: { stars: "3.1k", forks: "567", status: "Production" },
-    technologies: ["Ray RLlib", "Redis", "Kubernetes", "gRPC"],
-    github: "https://github.com/username/distributed-marl",
-    demo: "https://demo.example.com",
-    gradient: "from-orange-500/20 to-red-500/20"
-  },
-  {
-    category: "NLP",
-    title: "Code-Mixed Language Model",
-    description: "Large language model trained on multilingual code-mixed data. Handles seamless switching between languages in conversational AI.",
-    stats: { stars: "4.2k", forks: "789", status: "Beta" },
-    technologies: ["Transformers", "Tokenizers", "Datasets", "Accelerate"],
-    github: "https://github.com/username/code-mixed-lm",
-    demo: "https://demo.example.com",
-    gradient: "from-pink-500/20 to-violet-500/20"
-  },
-  {
-    category: "OPTIMIZATION",
-    title: "Federated Learning Framework",
-    description: "Privacy-preserving ML framework enabling collaborative training across distributed devices without sharing raw data.",
-    stats: { stars: "1.5k", forks: "301", status: "Stable" },
-    technologies: ["PySyft", "Flower", "FastAPI", "Encryption"],
-    github: "https://github.com/username/federated-ml",
-    demo: "https://demo.example.com",
-    gradient: "from-cyan-500/20 to-blue-500/20"
-  },
-  {
-    category: "TOOLS",
-    title: "ML Experiment Tracker",
-    description: "Lightweight experiment tracking and model versioning tool with beautiful visualizations and collaborative features.",
-    stats: { stars: "892", forks: "156", status: "Maintenance" },
-    technologies: ["FastAPI", "React", "PostgreSQL", "Redis"],
-    github: "https://github.com/username/ml-tracker",
-    demo: "https://demo.example.com",
-    gradient: "from-yellow-500/20 to-orange-500/20"
   }
+  // {
+  //   category: "COMPUTER VISION", 
+  //   title: "Multi-Modal Medical Imaging",
+  //   description: "State-of-the-art model combining CT, MRI, and clinical data for early disease detection. Published in Nature Machine Intelligence.",
+  //   stats: { stars: "1.8k", forks: "234", status: "Research" },
+  //   technologies: ["TensorFlow", "MONAI", "Docker", "MLflow"],
+  //   github: "https://github.com/username/medical-imaging",
+  //   demo: "https://demo.example.com",
+  //   gradient: "from-green-500/20 to-teal-500/20"
+  // },
+  // {
+  //   category: "REINFORCEMENT LEARNING",
+  //   title: "Distributed Multi-Agent RL",
+  //   description: "Scalable framework for training multiple RL agents in complex environments. Supports up to 1000+ concurrent agents with efficient communication.",
+  //   stats: { stars: "3.1k", forks: "567", status: "Production" },
+  //   technologies: ["Ray RLlib", "Redis", "Kubernetes", "gRPC"],
+  //   github: "https://github.com/username/distributed-marl",
+  //   demo: "https://demo.example.com",
+  //   gradient: "from-orange-500/20 to-red-500/20"
+  // },
+  // {
+  //   category: "NLP",
+  //   title: "Code-Mixed Language Model",
+  //   description: "Large language model trained on multilingual code-mixed data. Handles seamless switching between languages in conversational AI.",
+  //   stats: { stars: "4.2k", forks: "789", status: "Beta" },
+  //   technologies: ["Transformers", "Tokenizers", "Datasets", "Accelerate"],
+  //   github: "https://github.com/username/code-mixed-lm",
+  //   demo: "https://demo.example.com",
+  //   gradient: "from-pink-500/20 to-violet-500/20"
+  // },
+  // {
+  //   category: "OPTIMIZATION",
+  //   title: "Federated Learning Framework",
+  //   description: "Privacy-preserving ML framework enabling collaborative training across distributed devices without sharing raw data.",
+  //   stats: { stars: "1.5k", forks: "301", status: "Stable" },
+  //   technologies: ["PySyft", "Flower", "FastAPI", "Encryption"],
+  //   github: "https://github.com/username/federated-ml",
+  //   demo: "https://demo.example.com",
+  //   gradient: "from-cyan-500/20 to-blue-500/20"
+  // },
+  // {
+  //   category: "TOOLS",
+  //   title: "ML Experiment Tracker",
+  //   description: "Lightweight experiment tracking and model versioning tool with beautiful visualizations and collaborative features.",
+  //   stats: { stars: "892", forks: "156", status: "Maintenance" },
+  //   technologies: ["FastAPI", "React", "PostgreSQL", "Redis"],
+  //   github: "https://github.com/username/ml-tracker",
+  //   demo: "https://demo.example.com",
+  //   gradient: "from-yellow-500/20 to-orange-500/20"
+  // }
 ]
 
 const Projects = () => {
