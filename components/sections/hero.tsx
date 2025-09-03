@@ -30,26 +30,36 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </Button>
-              <Button size="lg" variant="outline">
-                <Mail className="mr-2 h-4 w-4" />
-                Contact Me
-              </Button>
+              <a href="/Sai-Amruth-Balusu-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </Button>
+              </a>
+              <a href="mailto:saiamruth3@gmail.com">
+                <Button size="lg" variant="outline">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Contact Me
+                </Button>
+              </a>
             </div>
 
             <div className="flex space-x-4">
-              <Button size="icon" variant="ghost">
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost">
-                <Mail className="h-5 w-5" />
-              </Button>
+              <a href="https://github.com/amruv" target="_blank" rel="noopener noreferrer">
+                <Button size="icon" variant="ghost">
+                  <Github className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/sai-amruth-balusu-052a9521b" target="_blank" rel="noopener noreferrer">
+                <Button size="icon" variant="ghost">
+                  <Linkedin className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="mailto:saiamruth3@gmail.com">
+                <Button size="icon" variant="ghost">
+                  <Mail className="h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </motion.div>
 

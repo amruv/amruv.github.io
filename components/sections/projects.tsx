@@ -9,6 +9,26 @@ import { Github, ExternalLink, Star } from 'lucide-react'
 
 const projects = [
   {
+    category: "AI",
+    title: "Private-AI",
+    description: "Explorations and implementations around privacy-preserving AI (from resume).",
+    stats: { stars: "-", forks: "-", status: "Active" },
+    technologies: ["Python", "AI"],
+    github: "https://github.com/amruv/Private-AI",
+    demo: "https://github.com/amruv/Private-AI",
+    gradient: "from-cyan-500/20 to-blue-500/20"
+  },
+  {
+    category: "DEV",
+    title: "ScoutSmart-Dev",
+    description: "Development repo referenced in resume.",
+    stats: { stars: "-", forks: "-", status: "Active" },
+    technologies: ["TypeScript", "Node.js"],
+    github: "https://github.com/amruv/ScoutSmart-Dev",
+    demo: "https://github.com/amruv/ScoutSmart-Dev",
+    gradient: "from-teal-500/20 to-emerald-500/20"
+  },
+  {
     category: "DEEP LEARNING",
     title: "Neural Architecture Search for Transformers",
     description: "Automated architecture search framework for discovering optimal transformer configurations. Achieved 15% performance improvement over manual designs.",

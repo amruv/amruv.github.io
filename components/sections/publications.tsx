@@ -9,22 +9,23 @@ import { ExternalLink, FileText, Users, Calendar } from 'lucide-react'
 
 const publications = [
   {
-    title: "Attention Is All You Need: A Comprehensive Survey of Transformer Architectures",
-    authors: ["Your Name", "Co-Author 1", "Co-Author 2"],
-    venue: "Neural Information Processing Systems (NeurIPS)",
-    year: "2024",
+    title: "BCD 2023 Paper",
+    authors: ["Sai Amruth Balusu", "Co-authors"],
+    venue: "IEEE Big Data Conference (from resume)",
+    year: "2023",
     type: "Conference",
-    citations: 1247,
-    abstract: "A comprehensive survey of transformer architectures and their applications across various domains including natural language processing, computer vision, and multimodal learning.",
-    tags: ["Transformers", "Survey", "Deep Learning"],
+    citations: 0,
+    abstract: "Publication referenced in resume. See DOI for details.",
+    tags: ["Big Data", "ML"],
     links: {
-      paper: "https://arxiv.org/abs/example",
-      code: "https://github.com/username/transformer-survey",
-      bibtex: `@inproceedings{yourname2024attention,
-  title={Attention Is All You Need: A Comprehensive Survey of Transformer Architectures},
-  author={Your Name and Co-Author 1 and Co-Author 2},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2024}
+      paper: "https://doi.org/10.1109/BCD57833.2023.10466330",
+      code: "https://github.com/amruv",
+      bibtex: `@inproceedings{balusu2023bcd,
+  title={Paper at IEEE Big Data Conference},
+  author={Balusu, Sai Amruth and others},
+  booktitle={IEEE Big Data},
+  year={2023},
+  doi={10.1109/BCD57833.2023.10466330}
 }`
     }
   }

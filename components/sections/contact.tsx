@@ -69,7 +69,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">your.name@university.edu</p>
+                    <p className="text-sm text-muted-foreground">saiamruth3@gmail.com</p>
                   </div>
                 </div>
 
@@ -89,22 +89,28 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-sm text-muted-foreground">+91 7624961171</p>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-border">
                   <p className="font-medium mb-4">Follow me on social media</p>
                   <div className="flex space-x-3">
-                    <Button size="icon" variant="outline">
-                      <Github className="w-4 h-4" />
-                    </Button>
-                    <Button size="icon" variant="outline">
-                      <Linkedin className="w-4 h-4" />
-                    </Button>
-                    <Button size="icon" variant="outline">
-                      <Twitter className="w-4 h-4" />
-                    </Button>
+                    <a href="https://github.com/amruv" target="_blank" rel="noopener noreferrer">
+                      <Button size="icon" variant="outline">
+                        <Github className="w-4 h-4" />
+                      </Button>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sai-amruth-balusu-052a9521b" target="_blank" rel="noopener noreferrer">
+                      <Button size="icon" variant="outline">
+                        <Linkedin className="w-4 h-4" />
+                      </Button>
+                    </a>
+                    <a href="mailto:saiamruth3@gmail.com">
+                      <Button size="icon" variant="outline">
+                        <Twitter className="w-4 h-4" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
 

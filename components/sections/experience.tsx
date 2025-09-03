@@ -6,32 +6,25 @@ import { Badge } from '@/components/ui/badge'
 
 const experiences = [
   {
-    title: "Senior ML Research Scientist",
-    company: "AI Research Lab",
-    period: "2022 - Present",
-    description: "Leading research on transformer architectures and their applications in multimodal learning. Published 8+ papers in top-tier conferences including NeurIPS and ICML.",
-    technologies: ["PyTorch", "Transformers", "CUDA", "Distributed Training"],
+    title: "Software Developer",
+    company: "Oracle · Bengaluru",
+    period: "Jul 2023 – Jun 2025",
+    description: "Resolved 250+ customer issues and delivered 10+ projects using SQL, Groovy, Java, and Python (9.8/10 CSAT). Built an internal LLM + RAG assistant for Oracle Fusion HCM that cut research time from 1–2 weeks to under 5 minutes and reduced resolution time by 60% via PL/SQL code generation. Integrated Generative AI features for 3 clients using Fine-Tuning, Context Prompting, and RAG within Oracle Fusion to accelerate AI deployment.",
+    technologies: ["SQL", "PL/SQL", "Groovy", "Java", "Python", "LLM", "RAG", "Oracle Cloud"],
   },
   {
-    title: "ML Research Engineer",
-    company: "Tech Giant Inc.",
-    period: "2020 - 2022",
-    description: "Developed and deployed large-scale recommendation systems serving millions of users. Improved model accuracy by 15% using novel attention mechanisms.",
-    technologies: ["TensorFlow", "Kubernetes", "MLflow", "Apache Spark"],
+    title: "ML Engineer (Freelance)",
+    company: "Mercuri.ai · Bengaluru",
+    period: "May 2023 – Aug 2023",
+    description: "Developed an end-to-end RAG pipeline for Mercuri's SMS Marketing Tool using OpenAI API, LangChain, and MongoDB Vector Search, achieving 87% customer query satisfaction. Optimized prompting strategies and deployed the AI solution across 10+ client environments, enabling seamless access to product catalogs and customer documentation.",
+    technologies: ["OpenAI API", "LangChain", "MongoDB Vector Search", "Prompt Engineering", "RAG"],
   },
   {
-    title: "PhD Candidate",
-    company: "University of Excellence",
-    period: "2016 - 2020",
-    description: "Doctoral research focused on deep reinforcement learning for autonomous systems. Thesis: 'Novel Approaches to Multi-Agent Reinforcement Learning in Dynamic Environments'.",
-    technologies: ["OpenAI Gym", "Ray RLlib", "PyBullet", "ROS"],
-  },
-  {
-    title: "Research Intern",
-    company: "Innovation Labs",
-    period: "2019 - 2019",
-    description: "Summer internship working on computer vision models for medical imaging. Developed CNN architectures for early cancer detection with 94% accuracy.",
-    technologies: ["Keras", "OpenCV", "DICOM", "Medical Imaging"],
+    title: "Data Science Intern",
+    company: "Material Depot (YC) · Bengaluru",
+    period: "Jan 2023 – Apr 2023",
+    description: "Engineered an image-based product recommendation system using ResNet-150 (CNN) and k-means clustering, boosting accuracy from 79% to 92%, increasing product browsing engagement by 27%, and improving sales conversions by 6%.",
+    technologies: ["ResNet-150 (CNN)", "k-means", "Computer Vision"],
   }
 ]
 
@@ -48,7 +41,7 @@ const Experience = () => {
         >
           <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A journey through my career in machine learning research and development
+            A journey through my career in machine learning development
           </p>
         </motion.div>
 

@@ -9,6 +9,50 @@ import { ExternalLink, Award, Calendar } from 'lucide-react'
 
 const certifications = [
   {
+    category: "CERTIFICATE",
+    title: "OCI Data Science Professional",
+    issuer: "Oracle Cloud Infrastructure",
+    date: "",
+    credentialId: "",
+    description: "Referenced in resume.",
+    skills: ["OCI", "Data Science"],
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    logo: "🎓"
+  },
+  {
+    category: "CERTIFICATE",
+    title: "Agentic AI: Building DataFirst AI Agents",
+    issuer: "",
+    date: "",
+    credentialId: "",
+    description: "Referenced in resume.",
+    skills: ["Agents", "AI"],
+    gradient: "from-purple-500/20 to-pink-500/20",
+    logo: "🧠"
+  },
+  {
+    category: "CERTIFICATE",
+    title: "Deploying Scalable ML for Data Science",
+    issuer: "",
+    date: "",
+    credentialId: "",
+    description: "Referenced in resume.",
+    skills: ["MLOps", "Scaling"],
+    gradient: "from-green-500/20 to-teal-500/20",
+    logo: "⚙️"
+  },
+  {
+    category: "CERTIFICATE",
+    title: "Inventory Cloud",
+    issuer: "",
+    date: "",
+    credentialId: "",
+    description: "Referenced in resume.",
+    skills: ["Cloud", "Inventory"],
+    gradient: "from-orange-500/20 to-yellow-500/20",
+    logo: "☁️"
+  },
+  {
     category: "CLOUD",
     title: "Google Cloud Professional ML Engineer",
     issuer: "Google Cloud",
