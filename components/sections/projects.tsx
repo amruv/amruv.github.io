@@ -7,25 +7,47 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Github, ExternalLink, Star } from 'lucide-react'
 
-const projects = [
+type Project = {
+  category: string
+  title: string
+  description: string
+  bullets?: string[]
+  // stats: { stars: string; forks: string; status: string }
+  technologies: string[]
+  github: string
+  demo?: string
+  gradient: string
+}
+
+const projects: Project[] = [
   {
     category: "AI",
     title: "Private-AI",
-    description: "Explorations and implementations around privacy-preserving AI (from resume).",
-    stats: { stars: "-", forks: "-", status: "Active" },
-    technologies: ["Python", "AI"],
+    description: "A hybrid approach to privacy‑preserving AI.",
+    bullets: [
+      "Aim: Design and implement a hybrid approach to protect sensitive user data using multiple techniques.",
+      "Approach: Combine Federated Learning, Differential Privacy, and Homomorphic Encryption.",
+      "Result: ~9x increase in privacy with a measured accuracy trade‑off."
+    ],
+    // stats: { stars: "-", forks: "-", status: "Active" },
+    technologies: ["Python", "AI", "Safety", "Reinforcement Learning [RL]", "Federated Learning"],
     github: "https://github.com/amruv/Private-AI",
-    demo: "https://github.com/amruv/Private-AI",
+    // demo: "https://github.com/amruv/Private-AI",
     gradient: "from-cyan-500/20 to-blue-500/20"
   },
   {
     category: "DEV",
     title: "ScoutSmart-Dev",
-    description: "Development repo referenced in resume.",
+    description: "Football Scouting. Smart. Accessible. Powerful.",
+    bullets: [
+      "AI-powered scouting platform built with React, TypeScript, and Google Gemini.",
+      "Chat-based AI assistant with real-time league data integration.",
+      "Generates analytic graphs, stats, and tactical profiles for talent identification."
+    ],
     stats: { stars: "-", forks: "-", status: "Active" },
     technologies: ["TypeScript", "Node.js"],
     github: "https://github.com/amruv/ScoutSmart-Dev",
-    demo: "https://github.com/amruv/ScoutSmart-Dev",
+    // demo: "https://github.com/amruv/ScoutSmart-Dev",
     gradient: "from-teal-500/20 to-emerald-500/20"
   },
   {
@@ -140,6 +162,13 @@ const Projects = () => {
                     <CardDescription className="text-sm leading-relaxed mb-4">
                       {project.description}
                     </CardDescription>
+                    {project.bullets && project.bullets.length > 0 && (
+                      <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground mb-4">
+                        {project.bullets.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
 
                     <div className="flex flex-wrap gap-1 mb-4">
                       {project.technologies.slice(0, 3).map((tech, techIndex) => (
