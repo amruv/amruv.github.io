@@ -12,7 +12,7 @@ type Project = {
   title: string
   description: string
   bullets?: string[]
-  // stats: { stars: string; forks: string; status: string }
+  stats?: { stars: string; forks: string; status: string }
   technologies: string[]
   github: string
   demo?: string
