@@ -12,7 +12,7 @@ type Project = {
   title: string
   description: string
   bullets?: string[]
-  stats?: { stars: string; forks: string; status: string }
+  // stats: { stars: string; forks: string; status: string }
   technologies: string[]
   github: string
   demo?: string
@@ -29,7 +29,7 @@ const projects: Project[] = [
       "Approach: Combine Federated Learning, Differential Privacy, and Homomorphic Encryption.",
       "Result: ~9x increase in privacy with a measured accuracy trade‑off."
     ],
-    stats: { stars: "-", forks: "-", status: "Active" },
+    // stats: { stars: "-", forks: "-", status: "Active" },
     technologies: ["Python", "AI", "Safety", "Reinforcement Learning [RL]", "Federated Learning"],
     github: "https://github.com/amruv/Private-AI",
     // demo: "https://github.com/amruv/Private-AI",
@@ -44,7 +44,7 @@ const projects: Project[] = [
       "Chat-based AI assistant with real-time league data integration.",
       "Generates analytic graphs, stats, and tactical profiles for talent identification."
     ],
-    stats: { stars: "-", forks: "-", status: "Active" },
+    // stats: { stars: "-", forks: "-", status: "Active" },
     technologies: ["TypeScript", "Node.js"],
     github: "https://github.com/amruv/ScoutSmart-Dev",
     // demo: "https://github.com/amruv/ScoutSmart-Dev",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     category: "DEEP LEARNING",
     title: "Neural Architecture Search for Transformers",
     description: "Automated architecture search framework for discovering optimal transformer configurations. Achieved 15% performance improvement over manual designs.",
-    stats: { stars: "2.3k", forks: "456", status: "Active" },
+    // stats: { stars: "2.3k", forks: "456", status: "Active" },
     technologies: ["PyTorch", "Ray Tune", "Weights & Biases", "CUDA"],
     github: "https://github.com/username/nas-transformers",
     demo: "https://demo.example.com",
@@ -148,10 +148,10 @@ const Projects = () => {
                       <Badge variant="outline" className="text-xs font-medium">
                         {project.category}
                       </Badge>
-                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                      {/* <div className="flex items-center space-x-2 text-xs text-muted-foreground">
                         <Star className="w-3 h-3" />
                         <span>{project.stats.stars}</span>
-                      </div>
+                      </div> */}
                     </div>
                     <CardTitle className="text-lg font-semibold leading-tight">
                       {project.title}
@@ -183,7 +183,7 @@ const Projects = () => {
                       )}
                     </div>
 
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    {/* <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <span className="flex items-center space-x-4">
                         <span>Forks: {project.stats.forks}</span>
                         <span className={`px-2 py-1 rounded-full ${
@@ -197,7 +197,7 @@ const Projects = () => {
                           {project.stats.status}
                         </span>
                       </span>
-                    </div>
+                    </div> */}
                   </CardContent>
 
                   <CardFooter className="pt-0">
