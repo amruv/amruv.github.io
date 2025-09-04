@@ -5,9 +5,10 @@ import { motion } from 'framer-motion'
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('')
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const navItems = useMemo(() => ([
-    { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'publications', label: 'Publications' },
@@ -28,6 +29,9 @@ const Navigation = () => {
           break
         }
       }
+
+      const progress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+      setScrollProgress(progress)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -51,13 +55,24 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <motion.div 
-            className="text-2xl  text-primary test-font-courier"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Sai Amruth Balusu
+          <motion.div className="relative">
+            <motion.div 
+              className="text-2xl  text-primary test-font-courier"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <button onClick={() => scrollToSection('about')} className="cursor-pointer">
+                Sai Amruth Balusu
+              </button>
+            </motion.div>
+            <motion.div
+              className="absolute bottom-0 left-0 h-0.5 bg-primary"
+              style={{ width: `${scrollProgress}%` }}
+              initial={{ width: 0 }}
+              animate={{ width: `${scrollProgress}%` }}
+              transition={{ ease: "easeOut", duration: 0.2 }}
+            />
           </motion.div>
           
           <div className="hidden md:flex space-x-8">
@@ -94,11 +109,32 @@ const Navigation = () => {
             </button>
           </div>
         </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden mt-4 border-t pt-3 space-y-1"
+          >
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => { scrollToSection(item.id); setMenuOpen(false) }}
+                className={`block w-full text-left px-2 py-2 text-sm test-font-courier transition-colors ${
+                  activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </motion.div>
+        )}
       </div>
     </motion.nav>
   )
 }
 
 export default Navigation
-
-

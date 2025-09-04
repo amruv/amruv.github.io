@@ -55,11 +55,11 @@ const Hero = () => {
                   <Linkedin className="h-5 w-5" />
                 </Button>
               </a>
-              <a href="mailto:saiamruth3@gmail.com">
+              {/* <a href="mailto:saiamruth3@gmail.com">
                 <Button size="icon" variant="ghost">
                   <Mail className="h-5 w-5" />
                 </Button>
-              </a>
+              </a> */}
             </div>
           </motion.div>
 

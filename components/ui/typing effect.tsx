@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 interface TypingAnimationProps {
   texts: string[];
@@ -19,6 +19,12 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Reserve width equal to the longest string (+1ch for the caret)
+  const maxLen = useMemo(() => {
+    if (!texts || texts.length === 0) return 0;
+    return texts.reduce((m, t) => Math.max(m, t.length), 0) + 1;
+  }, [texts]);
 
   useEffect(() => {
     if (texts.length === 0) return;
@@ -54,7 +60,11 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   }, [displayText, currentIndex, isDeleting, isPaused, texts, speed, deleteSpeed, pauseDuration]);
 
   return (
-    <span className={className}>
+    <span className={className} style={{
+      display: 'inline-block',
+      whiteSpace: 'nowrap',
+      minWidth: `${maxLen}ch`
+    }}>
       {displayText}
       <span className="animate-pulse">|</span>
     </span>
