@@ -5,8 +5,9 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Calendar, Clock, ArrowRight, ArrowLeft } from 'lucide-react'
+import { Calendar, Clock, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Navigation from '@/components/navigation'
 
 const blogPosts = [
   {
@@ -74,18 +75,11 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Navigation />
+      
       {/* Header */}
-      <div className="bg-background border-b border-border">
+      <div className="bg-background border-b border-border pt-20">
         <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="flex items-center gap-4 mb-6">
-            <Link href="/">
-              <Button variant="ghost" size="sm" className="test-font-mono">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </Button>
-            </Link>
-          </div>
-          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

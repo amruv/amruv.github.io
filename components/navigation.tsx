@@ -2,11 +2,14 @@
 
 import React, { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('')
   const [scrollProgress, setScrollProgress] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navItems = useMemo(() => ([
     { id: 'experience', label: 'Experience' },
@@ -46,6 +49,13 @@ const Navigation = () => {
     }
   }
 
+  const handleHomeClick = () => {
+    if (pathname === '/') {
+      scrollToSection('about')
+    }
+    // If not on homepage, the Link component will handle navigation
+  }
+
   return (
     <motion.nav 
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md"
@@ -62,9 +72,15 @@ const Navigation = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <button onClick={() => scrollToSection('about')} className="cursor-pointer">
-                Sai Amruth Balusu
-              </button>
+              {pathname === '/' ? (
+                <button onClick={handleHomeClick} className="cursor-pointer">
+                  Sai Amruth Balusu
+                </button>
+              ) : (
+                <Link href="/" className="cursor-pointer">
+                  Sai Amruth Balusu
+                </Link>
+              )}
             </motion.div>
             <motion.div
               className="absolute bottom-0 left-0 h-0.5 bg-primary"
@@ -79,7 +95,14 @@ const Navigation = () => {
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                  if (pathname === '/') {
+                    scrollToSection(item.id)
+                  } else {
+                    // Navigate to homepage with hash
+                    window.location.href = `/#${item.id}`
+                  }
+                }}
                 className={`relative px-3 py-2 text-sm test-font-courier transition-colors hover:text-accent ${
                   activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
                 }`}
@@ -122,7 +145,14 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => { scrollToSection(item.id); setMenuOpen(false) }}
+                onClick={() => { 
+                  if (pathname === '/') {
+                    scrollToSection(item.id)
+                  } else {
+                    window.location.href = `/#${item.id}`
+                  }
+                  setMenuOpen(false) 
+                }}
                 className={`block w-full text-left px-2 py-2 text-sm test-font-courier transition-colors ${
                   activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
                 }`}
