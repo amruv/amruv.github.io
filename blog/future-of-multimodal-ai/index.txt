@@ -1,6 +1,6 @@
 1:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:HL["/_next/static/css/5ce533f03faec87d.css","style",{"crossOrigin":""}]
-0:["VJ8pIkNGdX5xkUtW2o14n",[[["",{"children":["blog",{"children":[["slug","future-of-multimodal-ai","d"],{"children":["__PAGE__?{\"slug\":\"future-of-multimodal-ai\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5ce533f03faec87d.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
+0:["h7mXkjEwxRjzbG3e8cpKQ",[[["",{"children":["blog",{"children":[["slug","future-of-multimodal-ai","d"],{"children":["__PAGE__?{\"slug\":\"future-of-multimodal-ai\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5ce533f03faec87d.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
 5:I[6954,[],""]
 6:I[7264,[],""]
 8:I[8326,["326","static/chunks/326-f3014610e927a105.js","308","static/chunks/app/blog/%5Bslug%5D/page-59ec5e1211dbfc7e.js"],""]
