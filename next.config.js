@@ -1,13 +1,16 @@
-const withMDX = require('@next/mdx')({
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import createMDX from '@next/mdx';
+
+const withMDX = createMDX({
   extension: /\.mdx?$/,
-    options: {
-      remarkPlugins: [
-        // require('remark-frontmatter'),
-        await import('remark-frontmatter'),
-        await import('remark-mdx-frontmatter')
-     ], 
-    },
-  });
+  options: {
+    remarkPlugins: [
+      remarkFrontmatter,
+      remarkMdxFrontmatter
+    ],
+  },
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,4 +21,4 @@ const nextConfig = {
   basePath: '',
   pageExtensions: ['ts', 'tsx', 'mdx'],
 }
-module.exports = withMDX(nextConfig)
+export default withMDX(nextConfig)
