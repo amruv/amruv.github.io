@@ -1,3 +1,13 @@
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+    options: {
+      remarkPlugins: [
+        require('remark-frontmatter'),
+        require('remark-mdx-frontmatter')
+     ], 
+    },
+  });
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -5,7 +15,6 @@ const nextConfig = {
   images: { unoptimized: true },
   assetPrefix: '',
   basePath: '',
+  pageExtensions: ['ts', 'tsx', 'mdx'],
 }
-module.exports = nextConfig
-
-
+module.exports = withMDX(nextConfig)
