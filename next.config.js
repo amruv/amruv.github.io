@@ -2,8 +2,9 @@ const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
     options: {
       remarkPlugins: [
-        require('remark-frontmatter'),
-        require('remark-mdx-frontmatter')
+        // require('remark-frontmatter'),
+        await import('remark-frontmatter'),
+        await import('remark-mdx-frontmatter')
      ], 
     },
   });
