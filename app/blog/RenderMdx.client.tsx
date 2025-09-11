@@ -2,7 +2,6 @@
 
 // import React from 'react'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { MDXProvider } from '@mdx-js/react'
 // import React from 'react'
 
 const components = {
@@ -40,12 +39,6 @@ const components = {
     <blockquote className="border-l-4 border-accent pl-4 italic mb-4" {...props} />
   ),
   hr: () => <hr className="my-8 border-border" />,
-  Note: (props: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-      className="border-l-4 border-accent-500 bg-accent-50 dark:bg-accent-900/20 dark:border-accent-400 p-4 my-6 rounded-md"
-      {...props}
-    />
-  )
 }
 
 export default function RenderMdx({ source }: { source: MDXRemoteSerializeResult }) {

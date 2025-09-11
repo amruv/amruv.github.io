@@ -2,18 +2,16 @@
 title: "How tf do LLMs work? - Part 1"
 description: "It all starts with a bit of attention-seeking, I suppose."
 date: "2025-09-07"
-readTime: "12 min read"
 tags: ["transformers", "llm", "attention", "machine-learning"]
-category: "REVIEW"
-gradient: "from-blue-500/20 to-purple-500/20"
 ---
-## (A Megan Fox less) Transformers
 
+# [Part 1] How tf do LLMs work? It all starts with a bit of attention-seeking, I suppose.
+
+## (A Megan Fox less) Transformers
 
 Transformers are a revolutionary set of Neural Network Architectures which changed the course of Machine Learning and Artificial Intelligence; and are the bedrock on which modern LLMs are built. Transformer architectures are designed to handle large amounts of simultaneous data with sequential semantic interpretability. This ability to parse sequential input weighing the semantic importance concurrently relies on a novel mechanism coined ***self-attention*** (delved into below) and led to the usage of transformers to interpret and learn the natural languages we write, speak, and hear.
 
 The simultaneous processing of sequential data allows it to model the relationship between any two words (tokens) in the input sequence no matter how far apart they are in the context of a language embedding graph (important calculations for context 'understanding'). The core functionality of the architecture is to transform an input sequence of vectors into an output sequence of vectors, where each output vector is a rich (and in cases complex, due to the semantic ambiguity of natural language) representation of its corresponding input, contextualised in depth by its relationship with all other elements in the sequence. This was considered a huge step forward from previous established architectures which processed inputs and computed sequentially (check out the note below for previous limitations).
-
 
 ## Limitations of Previous SOTA Model - RNNs with LSTM
 

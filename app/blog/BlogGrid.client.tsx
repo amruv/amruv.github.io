@@ -48,7 +48,7 @@ export default function BlogGrid({ posts }: { posts: BlogPostMeta[] }) {
                 </CardHeader>
 
                 <CardContent className="pb-4">
-                  <CardDescription className="text-sm text-accent leading-relaxed mb-4">
+                  <CardDescription className="text-sm leading-relaxed mb-4">
                     {post.description}
                   </CardDescription>
 
