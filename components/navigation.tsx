@@ -67,7 +67,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           <motion.div className="relative">
             <motion.div 
-              className="text-2xl  text-primary test-font-courier"
+              className="text-2xl  text-primary test-font-courier whitespace-nowrap"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -91,7 +91,7 @@ const Navigation = () => {
             />
           </motion.div>
           
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -125,7 +125,7 @@ const Navigation = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-foreground">
+            <button className="text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
