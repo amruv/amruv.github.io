@@ -17,7 +17,7 @@ const blogPosts = [
     readTime: "12 min read",
     tags: ["PyTorch", "Transformers", "Tutorial"],
     gradient: "from-blue-500/20 to-purple-500/20",
-    slug: "efficient-transformers-from-scratch"
+    slug: "s1e1"
   },
   {
     category: "RESEARCH",
