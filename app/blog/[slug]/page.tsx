@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { Card, CardContent } from "@/components/ui/card";
-import RenderMdx from "@/app/blog/RenderMdx.client";
+import MdxPost from "./MdxPost.client";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft, Share2, BookOpen } from "lucide-react";
@@ -36,16 +36,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const source = fs.readFileSync(filePath, "utf8");
   const { content, data } = matter(source);
-  const { serialize } = await import('next-mdx-remote/serialize')
-  const remarkGfm = (await import('remark-gfm')).default
-  const rehypeHighlight = (await import('rehype-highlight')).default
-  const mdx = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeHighlight],
-      format: 'mdx',
-    },
-  })
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -122,7 +112,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 lineHeight: "1.7",
               }}
             >
-              <RenderMdx source={mdx} />
+              <MdxPost content={content} frontmatter={data} />
             </div>
           </CardContent>
         </Card>

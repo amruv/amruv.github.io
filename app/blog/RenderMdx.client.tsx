@@ -1,8 +1,6 @@
 'use client'
 
-// import React from 'react'
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-// import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
 
 const components = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -41,8 +39,10 @@ const components = {
   hr: () => <hr className="my-8 border-border" />,
 }
 
-export default function RenderMdx({ source }: { source: MDXRemoteSerializeResult }) {
-  return <MDXRemote {...source} components={components} />
+export default function RenderMdx({ content, frontmatter }: { content: string, frontmatter: any }) {
+  return (
+    <MDXProvider components={components}>
+      {content}
+    </MDXProvider>
+  )
 }
-
-
