@@ -112,7 +112,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 lineHeight: "1.7",
               }}
             >
-              <MdxPost content={content} frontmatter={data} />
+              {/* <MdxPost content={content} frontmatter={data} /> */}
+              <MdxPost />
             </div>
           </CardContent>
         </Card>

@@ -7,7 +7,7 @@ const components = {
     <h1 className="mt-8 mb-6 text-3xl md:text-4xl font-bold text-primary test-font-courier" {...props} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="mt-8 mb-4 text-2xl md:text-3xl font-bold text-primary test-font-courier" {...props} />
+    <h2 className="mt-10 mb-6 text-2xl md:text-3xl font-bold text-primary test-font-courier " {...props} />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3 className="mt-6 mb-3 text-xl md:text-2xl font-semibold text-primary test-font-courier" {...props} />
@@ -39,10 +39,14 @@ const components = {
   hr: () => <hr className="my-8 border-border" />,
 }
 
-export default function RenderMdx({ content, frontmatter }: { content: string, frontmatter: any }) {
-  return (
-    <MDXProvider components={components}>
-      {content}
-    </MDXProvider>
-  )
+// export default function RenderMdx({ content, frontmatter }: { content: string, frontmatter: any }) {
+//   return (
+//     <MDXProvider components={components}>
+//       {content}
+//     </MDXProvider>
+//   )
+// }
+
+export default function RenderMdx({ children }: { children: React.ReactNode }) {
+  return <MDXProvider components={components}>{children}</MDXProvider>;
 }

@@ -7,6 +7,7 @@ tags: ["transformers", "llm", "attention", "machine-learning"]
 category: "REVIEW"
 gradient: "from-blue-500/20 to-purple-500/20"
 ---
+
 ## (A Megan Fox less) Transformers
 
 
@@ -39,13 +40,13 @@ The groundbreaking research paper [**"Attention Is All You Need" by Vaswani et a
 
 The research demonstrated that self-attention was not just an add-on; it was powerful enough on its own to handle complex sequence modelling tasks. By removing the dependency on a recurring (and sequential) architecture, they unlocked the potential for massive parallelisation.
 
-## Parallel Processing is crucial for scaling up any architecture, btw.
+> ## Parallel Processing is crucial for scaling up any architecture, btw.
 
-**Hardware Utilisation:** Modern processors (GPUs (Graphics)/TPUs (Tensors)) are parallel processors with thousands of cores. Model architectures that can be expressed as a series of large, independent calculations (matrix multiplications) will run exponentially faster than any sequential model ever could.
+> **Hardware Utilisation:** Modern processors (GPUs (Graphics)/TPUs (Tensors)) are parallel processors with thousands of cores. Model architectures that can be expressed as a series of large, independent calculations (matrix multiplications) will run exponentially faster than any sequential model ever could.
 
-**Scaling Law:** (Predictable relationship shown by a lot of research) The bigger the model (more parameters) and the more data you train it on, the better it performs. This was the driving force behind the first few generations of LLMs. *(Note: this is a huge point of contention lately as it seems that the scaling graph has plateaued somewhat i.e. LLM providers have seemed to hit a wall in terms of scaling up parameters, compute, and training data. For more info, please check out this exceptional [blog piece by Dr, Cameron R. Wolfe](https://cameronrwolfe.substack.com/p/llm-scaling-laws) [2] about how scaling laws are applicable to LLMs and exploring other paths to drive AI progress forward.)*
+> **Scaling Law:** (Predictable relationship shown by a lot of research) The bigger the model (more parameters) and the more data you train it on, the better it performs. This was the driving force behind the first few generations of LLMs. *(Note: this is a huge point of contention lately as it seems that the scaling graph has plateaued somewhat i.e. LLM providers have seemed to hit a wall in terms of scaling up parameters, compute, and training data. For more info, please check out this exceptional [blog piece by Dr, Cameron R. Wolfe](https://cameronrwolfe.substack.com/p/llm-scaling-laws) [2] about how scaling laws are applicable to LLMs and exploring other paths to drive AI progress forward.)*
 
-**Feasibility:** Parallel processing is what makes this scaling law possible in LLMs. Without it, training a 100+ billion parameter model would take years or decades, making it practically impossible. The Transformer's parallel-friendly design is the single biggest reason we have been able to witness the scaling of models to their current size (and capability).
+> **Feasibility:** Parallel processing is what makes this scaling law possible in LLMs. Without it, training a 100+ billion parameter model would take years or decades, making it practically impossible. The Transformer's parallel-friendly design is the single biggest reason we have been able to witness the scaling of models to their current size (and capability).
 
 ## A Brief Overview of the Proposed Transformer Structure (from [1])
 
