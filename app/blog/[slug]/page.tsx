@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               }}
             >
               {/* <MdxPost content={content} frontmatter={data} /> */}
-              <MdxPost />
+              <MdxPost slug={params.slug} />
             </div>
           </CardContent>
         </Card>

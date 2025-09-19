@@ -28,7 +28,7 @@ export default function Home() {
       <footer className="bg-secondary/50 py-8 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            © 2024 Dr. [Your Name]. All rights reserved. Built with Next.js and Tailwind CSS.
+            © 2025 Sai Amruth Balusu. All rights reserved. Built with Next.js and Tailwind CSS.
           </p>
         </div>
       </footer>

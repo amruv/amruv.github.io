@@ -27,7 +27,7 @@ const blogPosts = [
     readTime: "8 min read",
     tags: ["Multimodal AI", "Computer Vision", "NLP"],
     gradient: "from-green-500/20 to-teal-500/20",
-    slug: "future-of-multimodal-ai"
+    slug: "s1e2"
   },
   {
     category: "OPINION",
