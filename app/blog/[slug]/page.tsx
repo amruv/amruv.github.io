@@ -42,7 +42,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Header */}
       <div className="bg-background border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4">
             <Link href="/blog">
               <Button variant="ghost" size="sm" className="test-font-mono">
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div className="flex flex-wrap gap-2 mb-8">
             {data.tags?.map((tag: string, index: number) => (
-              <Badge key={index} variant="secondary" className="text-sm">
+              <Badge key={index} variant="secondary" className="text-sm text-accent">
                 {tag}
               </Badge>
             ))}

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Link from "next/link";
+// import Link from "next/link";
 
 const postsDir = path.join(process.cwd(), "content/blog/");
 
