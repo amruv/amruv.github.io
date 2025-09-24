@@ -9,11 +9,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out!
+If you have any questions or suggestions or if you want to adopt this template, feel free to reach out!
 
 ---
 
-Built with ❤️ by Sai Amruth
+Built by Sai Amruth
 
-# amruv.github.io
-Personal Website (in dev)
