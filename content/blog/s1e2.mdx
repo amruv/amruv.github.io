@@ -32,7 +32,7 @@ Think of a map where similar words are labelled next to each other: 'king' is cl
 
 At this point, the input to the model is no longer a sentence; it's a sequence of points in a geometrical space.
 
-## Order gives meaning -- Positional Encodings
+## Order gives meaning - Positional Encodings
 
 The self-attention mechanism has no innate sense of word order or in other words is **permutation-invariant**, unlike humans who understand meaning via word positions. 'The cat sat' and 'Sat the cat' produce identical vectors if we just used embeddings. To fix this, [1] suggests **positional encodings**: to inject information about the word's position directly into its vector representation.
 
