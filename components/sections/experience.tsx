@@ -86,9 +86,10 @@ const Experience = () => {
                 
                 <h4 className="text-lg text-muted-foreground mb-3">{exp.company}</h4>
                 
-                {exp.description && (
+                {/* {exp.description && (
                   <p className="text-muted-foreground mb-3">{exp.description}</p>
-                )}
+                )} */}
+                
                 {Array.isArray((exp as any).bullets) && (exp as any).bullets.length > 0 && (
                   <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground mb-4">
                     {(exp as any).bullets.map((item: string, i: number) => (
