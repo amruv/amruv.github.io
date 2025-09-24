@@ -53,8 +53,8 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Professional Experience</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
             A journey through my career in machine learning development
           </p>
         </motion.div>
@@ -80,16 +80,16 @@ const Experience = () => {
               {/* Content card */}
               <div className="ml-16 md:ml-0 bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-                  <span className="text-sm text-primary font-medium">{exp.period}</span>
+                  <h3 className="text-xl font-semibold text-primary test-font-mono">{exp.title}</h3>
+                  <span className="text-sm text-primary font-medium test-font-mono">{exp.period}</span>
                 </div>
                 
-                <h4 className="text-lg text-muted-foreground mb-3">{exp.company}</h4>
+                <h4 className="text-lg text-accent mb-3 test-font-mono">{exp.company}</h4>
                 
                 {/* {exp.description && (
                   <p className="text-muted-foreground mb-3">{exp.description}</p>
                 )} */}
-                
+
                 {Array.isArray((exp as any).bullets) && (exp as any).bullets.length > 0 && (
                   <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground mb-4">
                     {(exp as any).bullets.map((item: string, i: number) => (

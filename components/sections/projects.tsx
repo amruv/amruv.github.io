@@ -21,7 +21,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    category: "AI",
+    category: "Research",
     title: "Private-AI",
     description: "A hybrid approach to privacy‑preserving AI.",
     bullets: [
@@ -36,8 +36,8 @@ const projects: Project[] = [
     gradient: "from-cyan-500/20 to-blue-500/20"
   },
   {
-    category: "DEV",
-    title: "ScoutSmart-Dev",
+    category: "Product",
+    title: "ScoutSmart",
     description: "Football Scouting. Smart. Accessible. Powerful.",
     bullets: [
       "AI-powered scouting platform built with React, TypeScript, and Google Gemini.",
@@ -49,17 +49,17 @@ const projects: Project[] = [
     github: "https://github.com/amruv/ScoutSmart-Dev",
     // demo: "https://github.com/amruv/ScoutSmart-Dev",
     gradient: "from-teal-500/20 to-emerald-500/20"
-  },
-  {
-    category: "DEEP LEARNING",
-    title: "Neural Architecture Search for Transformers",
-    description: "Automated architecture search framework for discovering optimal transformer configurations. Achieved 15% performance improvement over manual designs.",
-    // stats: { stars: "2.3k", forks: "456", status: "Active" },
-    technologies: ["PyTorch", "Ray Tune", "Weights & Biases", "CUDA"],
-    github: "https://github.com/username/nas-transformers",
-    demo: "https://demo.example.com",
-    gradient: "from-blue-500/20 to-purple-500/20"
   }
+  // {
+  //   category: "DEEP LEARNING",
+  //   title: "Neural Architecture Search for Transformers",
+  //   description: "Automated architecture search framework for discovering optimal transformer configurations. Achieved 15% performance improvement over manual designs.",
+  //   // stats: { stars: "2.3k", forks: "456", status: "Active" },
+  //   technologies: ["PyTorch", "Ray Tune", "Weights & Biases", "CUDA"],
+  //   github: "https://github.com/username/nas-transformers",
+  //   demo: "https://demo.example.com",
+  //   gradient: "from-blue-500/20 to-purple-500/20"
+  // }
   // {
   //   category: "COMPUTER VISION", 
   //   title: "Multi-Modal Medical Imaging",
@@ -123,8 +123,8 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Research Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Research Projects</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
             Exploring the boundaries of machine learning through innovative research and open-source contributions
           </p>
         </motion.div>
@@ -138,14 +138,14 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
+              <Card className="relative h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
                 {/* Gradient background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 
-                <div className="relative z-10">
+                <div className="overflow-y-auto pb-20">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-2">
-                      <Badge variant="outline" className="text-xs font-medium">
+                      <Badge variant="outline" className="text-xs test-font-inter text-accent">
                         {project.category}
                       </Badge>
                       {/* <div className="flex items-center space-x-2 text-xs text-muted-foreground">
@@ -153,24 +153,24 @@ const Projects = () => {
                         <span>{project.stats.stars}</span>
                       </div> */}
                     </div>
-                    <CardTitle className="text-lg font-semibold leading-tight">
+                    <CardTitle className="text-lg font-semibold leading-tight text-primary test-font-mono">
                       {project.title}
                     </CardTitle>
                   </CardHeader>
 
                   <CardContent className="pb-4">
-                    <CardDescription className="text-sm leading-relaxed mb-4">
+                    <CardDescription className="text-sm leading-relaxed mb-4 test-font-inter">
                       {project.description}
                     </CardDescription>
                     {project.bullets && project.bullets.length > 0 && (
-                      <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground mb-4">
+                      <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground mb-4 test-font-inter">
                         {project.bullets.map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
                       </ul>
                     )}
 
-                    <div className="flex flex-wrap gap-1 mb-4">
+                    <div className="flex flex-wrap gap-1 mb-4 test-font-inter">
                       {project.technologies.slice(0, 3).map((tech, techIndex) => (
                         <Badge key={techIndex} variant="secondary" className="text-xs">
                           {tech}
@@ -200,16 +200,18 @@ const Projects = () => {
                     </div> */}
                   </CardContent>
 
-                  <CardFooter className="pt-0">
+                  <CardFooter className="absolute bottom-0 left-0 right-0 pt-0 text-accent">
                     <div className="flex space-x-2 w-full">
                       <Button size="sm" variant="outline" className="flex-1">
                         <Github className="w-3 h-3 mr-1" />
                         Code
                       </Button>
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        Demo
-                      </Button>
+                      {project.demo && (
+                        <Button size="sm" variant="outline" className="flex-1">
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          Demo
+                        </Button>
+                      )}
                     </div>
                   </CardFooter>
                 </div>

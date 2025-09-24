@@ -28,10 +28,10 @@
     --radius: 0.75rem;
   }
 }
-
+/* 
 :root {
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+} */
 
 .mono {
   font-family: var(--font-mono);

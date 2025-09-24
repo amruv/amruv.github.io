@@ -51,73 +51,73 @@ const certifications = [
     skills: ["Cloud", "Inventory"],
     gradient: "from-orange-500/20 to-yellow-500/20",
     logo: "☁️"
-  },
-  {
-    category: "CLOUD",
-    title: "Google Cloud Professional ML Engineer",
-    issuer: "Google Cloud",
-    date: "March 2024",
-    credentialId: "GCP-ML-2024-001234",
-    description: "Comprehensive certification covering ML model design, development, and deployment on Google Cloud Platform with focus on scalable ML systems.",
-    skills: ["MLOps", "Vertex AI", "BigQuery ML", "Kubeflow"],
-    gradient: "from-blue-500/20 to-cyan-500/20",
-    logo: "🎓"
-  },
-  {
-    category: "DEEP LEARNING",
-    title: "Deep Learning Specialization",
-    issuer: "DeepLearning.AI",
-    date: "January 2024",
-    credentialId: "DLAI-SPEC-2024-5678",
-    description: "Five-course specialization covering neural networks, deep learning, structuring ML projects, CNNs, and sequence models.",
-    skills: ["Neural Networks", "CNNs", "RNNs", "Transformers"],
-    gradient: "from-purple-500/20 to-pink-500/20",
-    logo: "🧠"
-  },
-  {
-    category: "AWS",
-    title: "AWS Certified Machine Learning - Specialty",
-    issuer: "Amazon Web Services",
-    date: "November 2023",
-    credentialId: "AWS-MLS-2023-9012",
-    description: "Advanced certification validating expertise in building, training, tuning, and deploying ML models on AWS platform.",
-    skills: ["SageMaker", "AWS ML Services", "Data Engineering", "Model Deployment"],
-    gradient: "from-orange-500/20 to-yellow-500/20",
-    logo: "☁️"
-  },
-  {
-    category: "MLOps",
-    title: "MLOps Engineering on AWS",
-    issuer: "AWS Training",
-    date: "September 2023",
-    credentialId: "AWS-MLOPS-2023-3456",
-    description: "Specialized training in implementing MLOps practices on AWS, covering CI/CD for ML, model monitoring, and automated retraining.",
-    skills: ["CI/CD", "Model Monitoring", "Infrastructure as Code", "Automation"],
-    gradient: "from-green-500/20 to-teal-500/20",
-    logo: "⚙️"
-  },
-  {
-    category: "RESEARCH",
-    title: "Stanford AI Professional Certificate",
-    issuer: "Stanford University",
-    date: "June 2023",
-    credentialId: "STANFORD-AI-2023-7890",
-    description: "Rigorous program covering AI fundamentals, machine learning theory, and practical applications in various domains.",
-    skills: ["AI Theory", "Algorithms", "Ethics", "Applications"],
-    gradient: "from-red-500/20 to-pink-500/20",
-    logo: "🎯"
-  },
-  {
-    category: "DATA SCIENCE",
-    title: "TensorFlow Developer Certificate",
-    issuer: "TensorFlow",
-    date: "March 2023",
-    credentialId: "TF-DEV-2023-1122",
-    description: "Hands-on certification demonstrating proficiency in building and training neural networks using TensorFlow.",
-    skills: ["TensorFlow", "Keras", "Model Training", "Deployment"],
-    gradient: "from-indigo-500/20 to-purple-500/20",
-    logo: "🔧"
   }
+  // {
+  //   category: "CLOUD",
+  //   title: "Google Cloud Professional ML Engineer",
+  //   issuer: "Google Cloud",
+  //   date: "March 2024",
+  //   credentialId: "GCP-ML-2024-001234",
+  //   description: "Comprehensive certification covering ML model design, development, and deployment on Google Cloud Platform with focus on scalable ML systems.",
+  //   skills: ["MLOps", "Vertex AI", "BigQuery ML", "Kubeflow"],
+  //   gradient: "from-blue-500/20 to-cyan-500/20",
+  //   logo: "🎓"
+  // },
+  // {
+  //   category: "DEEP LEARNING",
+  //   title: "Deep Learning Specialization",
+  //   issuer: "DeepLearning.AI",
+  //   date: "January 2024",
+  //   credentialId: "DLAI-SPEC-2024-5678",
+  //   description: "Five-course specialization covering neural networks, deep learning, structuring ML projects, CNNs, and sequence models.",
+  //   skills: ["Neural Networks", "CNNs", "RNNs", "Transformers"],
+  //   gradient: "from-purple-500/20 to-pink-500/20",
+  //   logo: "🧠"
+  // },
+  // {
+  //   category: "AWS",
+  //   title: "AWS Certified Machine Learning - Specialty",
+  //   issuer: "Amazon Web Services",
+  //   date: "November 2023",
+  //   credentialId: "AWS-MLS-2023-9012",
+  //   description: "Advanced certification validating expertise in building, training, tuning, and deploying ML models on AWS platform.",
+  //   skills: ["SageMaker", "AWS ML Services", "Data Engineering", "Model Deployment"],
+  //   gradient: "from-orange-500/20 to-yellow-500/20",
+  //   logo: "☁️"
+  // },
+  // {
+  //   category: "MLOps",
+  //   title: "MLOps Engineering on AWS",
+  //   issuer: "AWS Training",
+  //   date: "September 2023",
+  //   credentialId: "AWS-MLOPS-2023-3456",
+  //   description: "Specialized training in implementing MLOps practices on AWS, covering CI/CD for ML, model monitoring, and automated retraining.",
+  //   skills: ["CI/CD", "Model Monitoring", "Infrastructure as Code", "Automation"],
+  //   gradient: "from-green-500/20 to-teal-500/20",
+  //   logo: "⚙️"
+  // },
+  // {
+  //   category: "RESEARCH",
+  //   title: "Stanford AI Professional Certificate",
+  //   issuer: "Stanford University",
+  //   date: "June 2023",
+  //   credentialId: "STANFORD-AI-2023-7890",
+  //   description: "Rigorous program covering AI fundamentals, machine learning theory, and practical applications in various domains.",
+  //   skills: ["AI Theory", "Algorithms", "Ethics", "Applications"],
+  //   gradient: "from-red-500/20 to-pink-500/20",
+  //   logo: "🎯"
+  // },
+  // {
+  //   category: "DATA SCIENCE",
+  //   title: "TensorFlow Developer Certificate",
+  //   issuer: "TensorFlow",
+  //   date: "March 2023",
+  //   credentialId: "TF-DEV-2023-1122",
+  //   description: "Hands-on certification demonstrating proficiency in building and training neural networks using TensorFlow.",
+  //   skills: ["TensorFlow", "Keras", "Model Training", "Deployment"],
+  //   gradient: "from-indigo-500/20 to-purple-500/20",
+  //   logo: "🔧"
+  // }
 ]
 
 const Certifications = () => {

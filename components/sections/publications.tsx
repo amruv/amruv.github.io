@@ -49,8 +49,8 @@ const Publications = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Publications</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-accent test-font-courier">Publications</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
             Peer-reviewed research contributions to the machine learning community
           </p>
         </motion.div>

@@ -31,8 +31,8 @@ const Blog = ({ posts }: { posts: BlogPostMeta[] }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Blog</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Blog</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
             Sharing insights, tutorials, and thoughts on machine learning research and development
           </p>
         </motion.div>

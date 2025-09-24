@@ -41,8 +41,8 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Get In Touch</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
             Interested in collaboration, have questions about my research, or just want to chat about ML? I&apos;d love to hear from you.
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">saiamruth3@gmail.com</p>
+                    <a href="mailto:saiamruth3@gmail.com" className="text-sm text-muted-foreground">saiamruth3@gmail.com</a>
                   </div>
                 </div>
 
@@ -79,11 +79,11 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-sm text-muted-foreground">Bengaluru, India</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3">
+                {/* <div className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
@@ -91,7 +91,7 @@ const Contact = () => {
                     <p className="font-medium">Phone</p>
                     <p className="text-sm text-muted-foreground">+91 7624961171</p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="pt-6 border-t border-border">
                   <p className="font-medium mb-4">Follow me on social media</p>
@@ -101,7 +101,7 @@ const Contact = () => {
                         <Github className="w-4 h-4" />
                       </Button>
                     </a>
-                    <a href="https://www.linkedin.com/in/sai-amruth-balusu-052a9521b" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/sai-amruth-balusu" target="_blank" rel="noopener noreferrer">
                       <Button size="icon" variant="outline">
                         <Linkedin className="w-4 h-4" />
                       </Button>
@@ -128,7 +128,7 @@ const Contact = () => {
             </Card>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Form
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -212,7 +212,7 @@ const Contact = () => {
                 </form>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

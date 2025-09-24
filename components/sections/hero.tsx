@@ -37,14 +37,14 @@ const Hero = () => {
                 </Button>
               </a>
               <a href="mailto:saiamruth3@gmail.com">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className = 'text-accent'>
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Me
                 </Button>
               </a>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 text-accent">
               <a href="https://github.com/amruv" target="_blank" rel="noopener noreferrer">
                 <Button size="icon" variant="ghost">
                   <Github className="h-5 w-5" />
