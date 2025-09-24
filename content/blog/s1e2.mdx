@@ -1,13 +1,65 @@
 ---
-title: "How tf do LLMs work? - Part 2"
-description: "It all starts with a bit of attention-seeking, I suppose."
-date: "2025-09-07"
-readTime: "12 min read"
-tags: ["transformers", "llm", "attention", "machine-learning"]
-category: "TUTORIAL"
-gradient: "from-blue-500/20 to-purple-500/20"
+title: "How tf do LLMs work? - Part 2: Input Processing"
+description: "From words to tokens to ordered vectors - the crucial preprocessing pipeline"
+date: "2025-09-14"
+readTime: "8 min read"
+tags: ["transformers", "llm", "tokenization", "embeddings", "positional-encoding"]
+series: "How tf do LLMs work?"
+category: 'EXPLAINER'
+part: 2
+gradient: "from-purple-500/20 to-pink-500/20"
 ---
 
-# [Part 2] How tf do LLMs work?
+# Input - Words to Tokens to Ordered Vectors
 
-This is a placeholder while we wire up MDX correctly.
+Before an LLM can understand meaning, syntax, or context, it needs to translate human ordered text into something numerical and precise. Computers don't "see" words the way we do; they see structured arrays of numbers (called *embeddings*). The transformer architecture introduced in [1] starts with this crucial step: converting language into ordered vectors.
+
+## Tokenisation - Turning words into Understandable Chunks of Characters
+
+Algorithms that enable subword tokenisation like Byte-Pair Encoding (BPE) (used in [1]) are the standard. They break words into common sub-unit and assign a number to each known as token IDs. For example, "unbelievably" might become tokens ["un", "believe", "ably"]. This keeps the vocabulary size manageable and allows the model to understand and construct new words from familiar pieces.
+
+### Why subwords over words or even characters?
+
+**Word-level vocabularies** explode in size and suffer from out-of-vocabulary (OOV) issues. Consider the verb 'write'. The words - 'write', 'wrote', 'writing', would all be registered as separate entries leading to an increase in the training 'dictionary', even though the human understanding of these words are similar in context. Additionally, OOV issues arise when new forms of 'write' such as the word 'written' are encountered but were missing from the training dataset.
+
+**Character-level vocabularies** are small but sequences become long and harder to model. A lot of energy is required to frame the single word 'write' and understand the meaning of this word. Separate computation is required to understand meanings of words - 'write' and 'writhe' even though the difference is just one character.
+
+## Embeddings - Tokens to Multi-dimensional Vectors
+
+Token IDs are still meaningless integers. To work with them, we need to embed (or map) each token in a high-dimensional space where geometrical positioning encodes meaning. The vector result and the process itself are called 'embedding'.
+
+Think of a map where similar words are labelled next to each other: 'king' is close to 'queen', 'dog' places near 'puppy' and 'banana' embeds around 'fruit'. The embedding process assigns each token a vector (an array of length 512 in the original transformer). These vectors capture both semantic and syntactic features learned during training.
+
+At this point, the input to the model is no longer a sentence; it's a sequence of points in a geometrical space.
+
+## Order gives meaning -- Positional Encodings
+
+The self-attention mechanism has no innate sense of word order or in other words is **permutation-invariant**, unlike humans who understand meaning via word positions. 'The cat sat' and 'Sat the cat' produce identical vectors if we just used embeddings. To fix this, [1] suggests **positional encodings**: to inject information about the word's position directly into its vector representation.
+
+The authors of [1] proposed a clever, deterministic solution using sine and cosine waves of varying frequencies. For a token at position 'pos' and dimension 'i' in the embedding vector, the encoding is calculated as:
+
+```
+PE(pos, 2i) = sin(pos / 10000^(2i/d_model))
+PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))
+```
+![Positioning Encoding Formulae](/Images/PositionEncodings.png)
+
+Where:
+- d<sub>model</sub> is the dimension of the embedding (e.g., 512)
+- Each position (pos) gets a unique encoding vector
+- For small 'i's, denominator is close to 1 leading to **low-frequency dimensions**
+- For later dimensions, denominator is large, meaning **high-frequency dimensions**
+
+**Low-frequency dimensions capture global, coarse location**. Imagine one sine wave that takes hundreds of tokens to complete a full cycle; it can tell if you're at the beginning, middle, or end of a sequence.
+
+**High-frequency dimensions capture local, fine-grained offsets**. Some waves flip sign (oscillate) every 2-3 tokens which is useful for distinguishing the exact local order of neighbours.
+
+**Crucial Property:** This formulation allows the model to easily learn relative positions because the encoding for 'pos+k' can be represented as a linear transformation of the encoding for 'pos', a property that arises from the trigonometric identities sin(A+B) and cos(A+B).
+
+So, the input to the transformer is not just word embeddings, but word embeddings + position signals. This gives the model both meaning and order.
+
+Now the model has a neat row of vectors: ordered, semantically contextual, and position-aware. These are the raw ingredients the transformer model will turn into context and coherence using the attention mechanism.
+
+---
+
+*This is part 2 of the series 'How tf do LLMs work?'. Stay tuned for the next part where we dive deep into the attention mechanism!*

@@ -1,10 +1,10 @@
 ---
-title: "How tf do LLMs work? - Part 1"
+title: "How tf do LLMs work? - Part 1: Intro to Transformers"
 description: "It all starts with a bit of attention-seeking, I suppose."
 date: "2025-09-07"
-readTime: "12 min read"
+readTime: "10 min read"
 tags: ["transformers", "llm", "attention", "machine-learning"]
-category: "REVIEW"
+category: "EXPLAINER"
 gradient: "from-blue-500/20 to-purple-500/20"
 ---
 
@@ -55,6 +55,8 @@ The original Transformer from the paper featured an **Encoder-Decoder** architec
 **The Encoder:** Composed of a stack of identical layers. Its job is to read the entire input sequence (e.g., "The cat sat on the mat") and produce a context-rich numerical representation (referred to as embeddings) for each token. Each encoder layer has two main sub-layers: a **Multi-Head Self-Attention** mechanism and a **Position-wise Feed-Forward Network** (delved into in the next parts of the series).
 
 **The Decoder:** Also a stack of layers. Its job is to take the encoder's output and generate the target sequence token-by-token (e.g., "Le chat s'est assis sur le tapis"). Each decoder layer has *three* sub-layers: a **Masked Multi-Head Self-Attention** (masked to 'blind' it from seeing future tokens it's supposed to predict), an **Encoder-Decoder Attention** (to look at the output from the encoder), and a **Feed-Forward Network** (delved into in the next parts of the series).
+
+![Transformers](/Images/transformers.png)
 
 ***Note**: While this was the proposed architecture in 2017, modern LLMs like GPT, BERT etc use **Decoder-only** architectures.*
 

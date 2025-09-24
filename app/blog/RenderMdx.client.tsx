@@ -7,10 +7,10 @@ const components = {
     <h1 className="mt-8 mb-6 text-3xl md:text-4xl font-bold text-primary test-font-courier" {...props} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="mt-10 mb-6 text-2xl md:text-3xl font-bold text-primary test-font-courier " {...props} />
+    <h2 className="mt-10 mb-6 text-2xl md:text-3xl font-bold text-accent test-font-courier " {...props} />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="mt-6 mb-3 text-xl md:text-2xl font-semibold text-primary test-font-courier" {...props} />
+    <h3 className="mt-6 mb-3 text-xl md:text-2xl font-semibold text-foreground test-font-courier" {...props} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p className="mb-4 leading-relaxed test-font-mono" {...props} />
