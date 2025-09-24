@@ -131,8 +131,8 @@ const Certifications = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Certifications</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Certifications</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
             Professional certifications and continuous learning in machine learning and cloud technologies
           </p>
         </motion.div>
