@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ExternalLink, Award, Calendar } from 'lucide-react'
@@ -22,18 +22,18 @@ const certifications = [
   {
     category: "CERTIFICATE",
     title: "Agentic AI: Building DataFirst AI Agents",
-    issuer: "",
+    issuer: "LinkedIn",
     date: "",
     credentialId: "",
     description: "Referenced in resume.",
-    skills: ["Agents", "AI"],
+    skills: ["Agents", "AI", "RAGs"],
     gradient: "from-purple-500/20 to-pink-500/20",
     logo: "🧠"
   },
   {
     category: "CERTIFICATE",
     title: "Deploying Scalable ML for Data Science",
-    issuer: "",
+    issuer: "LinkedIn",
     date: "",
     credentialId: "",
     description: "Referenced in resume.",
@@ -44,7 +44,7 @@ const certifications = [
   {
     category: "CERTIFICATE",
     title: "Inventory Cloud",
-    issuer: "",
+    issuer: "Oracle Cloud Infrastructure",
     date: "",
     credentialId: "",
     description: "Referenced in resume.",
@@ -146,14 +146,14 @@ const Certifications = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
+              <Card className="relative h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
                 {/* Gradient background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${cert.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 
-                <div className="relative z-10">
+                <div className="overflow-y-auto pb-20">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-2">
-                      <Badge variant="outline" className="text-xs font-medium">
+                      <Badge variant="outline" className="text-xs font-medium text-accent test-font-inter">
                         {cert.category}
                       </Badge>
                       <div className="text-2xl">{cert.logo}</div>
@@ -161,17 +161,17 @@ const Certifications = () => {
                     <CardTitle className="text-lg font-semibold leading-tight">
                       {cert.title}
                     </CardTitle>
-                    <div className="text-sm text-primary font-medium">
+                    <div className="text-sm text-accent font-medium">
                       {cert.issuer}
                     </div>
                   </CardHeader>
 
                   <CardContent className="pb-4">
-                    <CardDescription className="text-sm leading-relaxed mb-4">
+                    <CardDescription className="text-sm leading-relaxed mb-4 test-font-inter">
                       {cert.description}
                     </CardDescription>
 
-                    <div className="flex flex-wrap gap-1 mb-4">
+                    <div className="flex flex-wrap gap-1 mb-4 test-font-inter">
                       {cert.skills.map((skill, skillIndex) => (
                         <Badge key={skillIndex} variant="secondary" className="text-xs">
                           {skill}
@@ -179,7 +179,7 @@ const Certifications = () => {
                       ))}
                     </div>
 
-                    <div className="space-y-2">
+                    {/* <div className="space-y-2">
                       <div className="flex items-center space-x-2 text-xs text-muted-foreground">
                         <Calendar className="w-3 h-3" />
                         <span>Issued: {cert.date}</span>
@@ -188,15 +188,17 @@ const Certifications = () => {
                         <Award className="w-3 h-3" />
                         <span>ID: {cert.credentialId}</span>
                       </div>
-                    </div>
+                    </div> */}
+                    </CardContent>
 
-                    <div className="mt-4">
-                      <Button size="sm" variant="outline" className="w-full">
+                    <CardFooter className = 'absolute bottom-0 left-0 right-0 pt-0 text-accent'>
+                    <div className="flex space-x-2 w-full">
+                      <Button size="sm" variant="outline" className="flex-1">
                         <ExternalLink className="w-3 h-3 mr-1" />
-                        Verify Certificate
+                        Certificate
                       </Button>
                     </div>
-                  </CardContent>
+                    </CardFooter>
                 </div>
               </Card>
             </motion.div>
