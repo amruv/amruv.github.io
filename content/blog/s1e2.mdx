@@ -34,7 +34,7 @@ At this point, the input to the model is no longer a sentence; it's a sequence o
 
 ## Order gives meaning - Positional Encodings
 
-The self-attention mechanism has no innate sense of word order or in other words is **permutation-invariant**, unlike humans who understand meaning via word positions. 'The cat sat' and 'Sat the cat' produce identical vectors if we just used embeddings. To fix this, [1] suggests **positional encodings**: to inject information about the word's position directly into its vector representation.
+Transformers have no innate sense of word order or in other words is **permutation-invariant**, unlike humans who understand meaning via word positions. 'The cat sat' and 'Sat the cat' produce identical vectors if we just used embeddings. To fix this, [1] suggests **positional encodings**: to inject information about the word's position directly into its vector representation.
 
 The authors of [1] proposed a clever, deterministic solution using sine and cosine waves of varying frequencies. For a token at position 'pos' and dimension 'i' in the embedding vector, the encoding is calculated as:
 
@@ -59,6 +59,12 @@ Where:
 So, the input to the transformer is not just word embeddings, but word embeddings + position signals. This gives the model both meaning and order.
 
 Now the model has a neat row of vectors: ordered, semantically contextual, and position-aware. These are the raw ingredients the transformer model will turn into context and coherence using the attention mechanism.
+
+## The Need For Self-Attention
+
+While **token embedding** is considered an upgrade on previous NLP techniques by geographically grouping words occurring in similar context together, this layer of the overall pipeline is still ***context-independent***, i.e. tokens are static in representation and will always be represented by the same vector - regardless of the meaning it has in the sentence. A pertinent example here would be the word ‘content’ in the context of ‘a bag of one’s contents’ or ‘content creation’, as opposed to the meaning of the same word in sentences such as “I’m content with the progress I made today”; the former is a noun meaning ‘things’, and the latter is a feeling or a state of being.
+
+Self-attention provides a dynamic approach to generating word representations by adjusting the embeddings with the relationship (context) of the token with the tokens around it, which we’ll explore in depth in the next section.
 
 ---
 
