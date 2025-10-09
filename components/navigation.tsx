@@ -25,6 +25,14 @@ const Navigation = () => {
       const sections = navItems.map(item => document.getElementById(item.id))
       const scrollPosition = window.scrollY + 100
 
+      // If we're at the very top of the page (hero section), don't set any active section
+      if (window.scrollY < 50) {
+        setActiveSection('')
+        const progress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+        setScrollProgress(progress)
+        return
+      }
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i]
         if (section && section.offsetTop <= scrollPosition) {

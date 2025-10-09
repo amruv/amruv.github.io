@@ -5,11 +5,13 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Github, Linkedin, Mail, Download } from 'lucide-react'
 import TypingAnimation from '@/components/ui/typing effect'
+// import GeometricBackground from '@/components/ui/geometric-background'
 
 const Hero = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center pt-20">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+    <section id="about" className="min-h-screen flex items-center justify-center pt-20 relative">
+      {/* <GeometricBackground /> */}
+      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -23,10 +25,11 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl test-font-mono text-muted-foreground mb-8 leading-relaxed">
-              Passionate about advancing the frontiers of artificial intelligence through 
+              The only way I know how to will my imprint on this world is through building things using math and novel algorithms.
+              {/* Passionate about advancing the frontiers of artificial intelligence through 
               cutting-edge research in machine learning, deep learning, and neural networks. 
               Currently focusing on transformer architectures and their applications in 
-              natural language processing.
+              natural language processing. */}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
