@@ -34,7 +34,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4 mb-8">
               <a href="/Sai-Amruth-Balusu-Resume.pdf" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <Button size="lg" className="bg-primary hover:bg-background hover:text-primary border-2 border-transparent hover:border-primary">
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </Button>

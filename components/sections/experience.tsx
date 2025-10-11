@@ -7,7 +7,8 @@ import { Badge } from '@/components/ui/badge'
 const experiences = [
   {
     title: "Software Developer",
-    company: "Oracle · Bengaluru",
+    company: "Oracle",
+    place: "Bengaluru",
     period: "Jul 2023 – Jun 2025",
     // description: "Resolved 250+ customer issues and delivered 10+ projects using SQL, Groovy, Java, and Python (9.8/10 CSAT). Built an internal LLM + RAG assistant for Oracle Fusion HCM that cut research time from 1–2 weeks to under 5 minutes and reduced resolution time by 60% via PL/SQL code generation. Integrated Generative AI features for 3 clients using Fine-Tuning, Context Prompting, and RAG within Oracle Fusion to accelerate AI deployment.",
     bullets: [
@@ -19,7 +20,8 @@ const experiences = [
   },
   {
     title: "ML Engineer (Freelance)",
-    company: "Mercuri.ai · Bengaluru",
+    company: "Mercuri.ai",
+    place: "Bengaluru",
     period: "May 2023 – Aug 2023",
     // description: "Developed an end-to-end RAG pipeline for Mercuri's SMS Marketing Tool using OpenAI API, LangChain, and MongoDB Vector Search, achieving 87% customer query satisfaction. Optimized prompting strategies and deployed the AI solution across 10+ client environments, enabling seamless access to product catalogs and customer documentation.",
     bullets: [
@@ -31,7 +33,8 @@ const experiences = [
   },
   {
     title: "Data Science Intern",
-    company: "Material Depot (YC) · Bengaluru",
+    company: "Material Depot (YC)",
+    place: "Bengaluru",
     period: "Jan 2023 – Apr 2023",
     // description: "Engineered an image-based product recommendation system using ResNet-150 (CNN) and k-means clustering, boosting accuracy from 79% to 92%, increasing product browsing engagement by 27%, and improving sales conversions by 6%.",
     bullets: [
@@ -81,10 +84,11 @@ const Experience = () => {
               <div className="ml-16 md:ml-0 bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                   <h3 className="text-xl font-semibold text-primary test-font-mono">{exp.title}</h3>
-                  <span className="text-sm text-primary font-medium test-font-mono">{exp.period}</span>
+                  <span className="text-sm text-primary font-medium test-font-mono">{exp.period}<br/>{exp.place}</span>
+                  {/* <span className="text-sm text-primary font-medium test-font-mono">{exp.place}</span> */}
                 </div>
                 
-                <h4 className="text-lg text-accent mb-3 test-font-mono">{exp.company}</h4>
+                <h4 className="text-lg text-bold text-accent mb-3 test-font-mono">{exp.company}</h4>
                 
                 {/* {exp.description && (
                   <p className="text-muted-foreground mb-3">{exp.description}</p>
