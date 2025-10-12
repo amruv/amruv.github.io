@@ -9,17 +9,17 @@ import { ExternalLink, FileText, Users, Calendar } from 'lucide-react'
 
 const publications = [
   {
-    title: "BCD 2023 Paper",
-    authors: ["Sai Amruth Balusu", "Co-authors"],
-    venue: "IEEE Big Data Conference (from resume)",
+    title: "PRIVATE-AI: A Hybrid Approach to privacy-preserving AI",
+    authors: ["Sai Amruth Balusu", "Saif K.", "Siri S."],
+    venue: "2023 IEEE/ACIS 8th International Conference on Big Data, Cloud Computing, and Data Science (BCD)",
     year: "2023",
     type: "Conference",
-    citations: 0,
-    abstract: "Publication referenced in resume. See DOI for details.",
-    tags: ["Big Data", "ML"],
+    citations: 2,
+    abstract: "Designed and implemented a hybrid approach to protect sensitive user data using multiple techniques.",
+    tags: ["Privacy", "ML", "Federated Learning", "Reinforcement Learning"],
     links: {
       paper: "https://doi.org/10.1109/BCD57833.2023.10466330",
-      code: "https://github.com/amruv",
+      code: "https://github.com/amruv/Private-AI",
       bibtex: `@inproceedings{balusu2023bcd,
   title={Paper at IEEE Big Data Conference},
   author={Balusu, Sai Amruth and others},
@@ -32,11 +32,16 @@ const publications = [
 ]
 
 const Publications = () => {
-  const [selectedPaper, setSelectedPaper] = useState<number | null>(null)
+  // const [selectedPaper, setSelectedPaper] = useState<number | null>(null)
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
   
-  const copyBibtex = (bibtex: string) => {
+  const copyBibtex = (bibtex: string, index: number) => {
     navigator.clipboard.writeText(bibtex)
-    // You could add a toast notification here
+    setCopiedIndex(index)
+    // Reset the copied state after 2 seconds
+    setTimeout(() => {
+      setCopiedIndex(null)
+    }, 2000)
   }
 
   return (
@@ -51,7 +56,7 @@ const Publications = () => {
         >
           <h2 className="text-4xl font-bold mb-4 text-accent test-font-courier">Publications</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
-            Peer-reviewed research contributions to the machine learning community
+            Publication contributions to the machine learning community
           </p>
         </motion.div>
 
@@ -84,7 +89,7 @@ const Publications = () => {
                           {paper.citations} citations
                         </div>
                       </div>
-                      <div className="text-primary font-medium mb-2">
+                      <div className="text-primary font-medium">
                         {paper.venue}
                       </div>
                     </div>
@@ -120,11 +125,46 @@ const Publications = () => {
                     </Button>
                     <Button 
                       size="sm" 
-                      variant="outline"
-                      onClick={() => copyBibtex(paper.links.bibtex)}
+                      variant={copiedIndex === index ? "default" : "outline"}
+                      className={`transition-all duration-300 ${
+                        copiedIndex === index 
+                          ? 'bg-accent hover:bg-accent text-background' 
+                          : ''
+                      }`}
+                      onClick={() => copyBibtex(paper.links.bibtex, index)}
                     >
-                      <FileText className="w-3 h-3 mr-1" />
-                      BibTeX
+                      <motion.div
+                        key={copiedIndex === index ? 'copied' : 'normal'}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex items-center"
+                      >
+                        {copiedIndex === index ? (
+                          <>
+                            {/* <motion.div
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+                              className="w-3 h-3 mr-1"
+                            >
+                              ✓
+                            </motion.div> */}
+                            <motion.span
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.2 }}
+                            >
+                              Copied!
+                            </motion.span>
+                          </>
+                        ) : (
+                          <>
+                            <FileText className="w-3 h-3 mr-1" />
+                            BibTeX
+                          </>
+                        )}
+                      </motion.div>
                     </Button>
                   </div>
                 </CardContent>

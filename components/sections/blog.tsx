@@ -85,7 +85,7 @@ const Blog = ({ posts }: { posts: BlogPostMeta[] }) => {
                           <Calendar className="w-3 h-3" />
                           <span>{post.date}</span>
                         </div>
-                        <Button variant="ghost" size="sm" className="group-hover:text-primary">
+                        <Button variant="ghost" size="sm" className="group-hover:text-background">
                           Read more
                           <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                         </Button>
