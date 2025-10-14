@@ -89,7 +89,7 @@ const Publications = () => {
                           {paper.citations} citations
                         </div>
                       </div>
-                      <div className="text-primary font-medium">
+                      <div className="text-primary font-medium test-font-mono">
                         {paper.venue}
                       </div>
                     </div>
