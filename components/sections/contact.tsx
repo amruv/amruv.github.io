@@ -47,7 +47,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -58,28 +58,28 @@ const Contact = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
-                <CardDescription>
+                {/* <CardDescription>
                   Feel free to reach out through any of these channels
-                </CardDescription>
+                </CardDescription> */}
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-primary" />
+                    <Mail className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="font-medium">Email</p>
-                    <a href="mailto:saiamruth3@gmail.com" className="text-sm text-muted-foreground">saiamruth3@gmail.com</a>
+                    <p className="font-medium text-accent test-font-mono">Email</p>
+                    <a href="mailto:saiamruth3@gmail.com" className="text-sm text-muted-foreground test-font-mono">saiamruth3@gmail.com</a>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-3">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
+                    <MapPin className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="font-medium">Location</p>
-                    <p className="text-sm text-muted-foreground">Bengaluru, India</p>
+                    <p className="font-medium text-accent test-font-mono">Location</p>
+                    <p className="text-sm text-muted-foreground test-font-mono">Bengaluru, India</p>
                   </div>
                 </div>
 
@@ -94,8 +94,8 @@ const Contact = () => {
                 </div> */}
 
                 <div className="pt-6 border-t border-border">
-                  <p className="font-medium mb-4">Follow me on social media</p>
-                  <div className="flex space-x-3">
+                  <CardTitle>Follow me on social media</CardTitle>
+                  <div className="flex space-x-3 text-accent">
                     <a href="https://github.com/amruv" target="_blank" rel="noopener noreferrer">
                       <Button size="icon" variant="outline">
                         <Github className="w-4 h-4" />
@@ -106,7 +106,7 @@ const Contact = () => {
                         <Linkedin className="w-4 h-4" />
                       </Button>
                     </a>
-                    <a href="mailto:saiamruth3@gmail.com">
+                    <a href="https://www.x.com/rizzingwithai">
                       <Button size="icon" variant="outline">
                         <Twitter className="w-4 h-4" />
                       </Button>
@@ -115,13 +115,13 @@ const Contact = () => {
                 </div>
 
                 <div className="pt-6 border-t border-border">
-                  <p className="font-medium mb-2">Research Interests</p>
+                  <CardTitle>Research Interests</CardTitle>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Transformers</Badge>
-                    <Badge variant="secondary">Computer Vision</Badge>
-                    <Badge variant="secondary">NLP</Badge>
-                    <Badge variant="secondary">Federated Learning</Badge>
-                    <Badge variant="secondary">MLOps</Badge>
+                    <Badge variant="outline">Transformers</Badge>
+                    <Badge variant="outline">Computer Vision</Badge>
+                    <Badge variant="outline">NLP</Badge>
+                    <Badge variant="outline">Federated Learning</Badge>
+                    <Badge variant="outline">MLOps</Badge>
                   </div>
                 </div>
               </CardContent>

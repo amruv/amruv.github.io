@@ -172,12 +172,12 @@ const Projects = () => {
 
                     <div className="flex flex-wrap gap-1 mb-4 test-font-inter">
                       {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="secondary" className="text-xs">
+                        <Badge key={techIndex} variant="outline" className="text-xs">
                           {tech}
                         </Badge>
                       ))}
                       {project.technologies.length > 3 && (
-                        <Badge variant="secondary" className="text-xs">
+                        <Badge variant="outline" className="text-xs">
                           +{project.technologies.length - 3}
                         </Badge>
                       )}

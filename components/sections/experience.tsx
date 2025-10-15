@@ -104,7 +104,7 @@ const Experience = () => {
                 
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="text-xs">
+                    <Badge key={techIndex} variant="outline" className="text-xs">
                       {tech}
                     </Badge>
                   ))}

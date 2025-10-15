@@ -40,8 +40,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-secondary/50 py-8 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-muted-foreground test-font-mono">
-            © 2025 Sai Amruth Balusu. All rights reserved. Built with Next.js and Tailwind CSS.
+          <p className="test-font-mono text-primary">
+            © 2025 Sai Amruth Balusu. 
+            </p>
+          <p className="test-font-mono text-accent"> All rights reserved. Built with Next.js and Tailwind CSS.
           </p>
         </div>
       </footer>
