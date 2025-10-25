@@ -21,7 +21,7 @@ const Hero = () => {
             <h1 className="relative text-5xl lg:text-5xl font-bold mb-10">
             <TypingAnimation texts={["Sai Amruth Balusu."]} className="text-primary test-font-courier" />
               <br />
-              <span className="text-4xl text-accent test-font-mono">ML Engineer</span>
+              <span className="text-4xl text-accent test-font-inter">ML Engineer</span>
             </h1>
             
             <p className="text-xl test-font-mono text-muted-foreground mb-8 leading-relaxed">
@@ -33,14 +33,14 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <a href="/Sai-Amruth-Balusu-Resume.pdf" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-primary hover:bg-background hover:text-primary border-2 border-transparent hover:border-primary">
+              <a href="/Sai-Amruth-Balusu-Resume.pdf" target="_blank" rel="opener noreferrer">
+                <Button size="lg" className="bg-primary hover:bg-background hover:text-primary border-2 border-transparent hover:border-primary test-font-inter">
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </Button>
               </a>
               <a href="mailto:saiamruth3@gmail.com">
-                <Button size="lg" variant="outline" className = 'text-accent'>
+                <Button size="lg" variant="outline" className = 'text-accent test-font-inter'>
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Me
                 </Button>

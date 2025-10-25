@@ -95,7 +95,7 @@ const Experience = () => {
                 )} */}
 
                 {Array.isArray((exp as any).bullets) && (exp as any).bullets.length > 0 && (
-                  <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground mb-4">
+                  <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground mb-4 test-font-inter">
                     {(exp as any).bullets.map((item: string, i: number) => (
                       <li key={i}>{item}</li>
                     ))}

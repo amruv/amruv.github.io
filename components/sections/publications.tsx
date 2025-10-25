@@ -56,7 +56,7 @@ const Publications = () => {
         >
           <h2 className="text-4xl font-bold mb-4 text-accent test-font-courier">Publications</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
-            Publication contributions to the machine learning community
+            Publication contributions to the Machine Learning community
           </p>
         </motion.div>
 
