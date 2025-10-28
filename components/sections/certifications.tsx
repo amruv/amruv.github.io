@@ -14,43 +14,47 @@ const certifications = [
     issuer: "Oracle Cloud Infrastructure",
     date: "",
     credentialId: "",
-    description: "Referenced in resume.",
-    skills: ["OCI", "Data Science"],
+    description: "Validates expertise in implementing end-to-end machine learning solutions on Oracle Cloud Infrastructure, including data ingestion, model development, deployment, and ML pipeline automation using Python",
+    skills: ["OCI", "Data Science", "AutoML", "ML Pipeline"],
     gradient: "from-blue-500/20 to-cyan-500/20",
-    logo: "🎓"
+    logo: "🎓",
+    certificateUrl: "/OCI DS Professional.pdf"
   },
   {
-    category: "CERTIFICATE",
+    category: "COURSE",
     title: "Agentic AI: Building DataFirst AI Agents",
-    issuer: "LinkedIn",
+    issuer: "LinkedIn Learning",
     date: "",
     credentialId: "",
-    description: "Referenced in resume.",
+    description: "Covers building autonomous AI agents capable of independent decision-making and task execution through data-first architectural approaches and modern agentic AI frameworks.",
     skills: ["Agents", "AI", "RAGs"],
     gradient: "from-purple-500/20 to-pink-500/20",
-    logo: "🧠"
+    logo: "🧠",
+    certificateUrl: "/Agentic AI.pdf"
   },
   {
-    category: "CERTIFICATE",
+    category: "COURSE",
     title: "Deploying Scalable ML for Data Science",
-    issuer: "LinkedIn",
+    issuer: "LinkedIn Learning",
     date: "",
     credentialId: "",
-    description: "Referenced in resume.",
+    description: "Demonstrates skills in deploying machine learning models at scale using containers, APIs, and orchestration tools like Kubernetes for production environments",
     skills: ["MLOps", "Scaling"],
     gradient: "from-green-500/20 to-teal-500/20",
-    logo: "⚙️"
+    logo: "⚙️",
+    certificateUrl: "/Deploying Scalable ML for Data Science.pdf"
   },
   {
     category: "CERTIFICATE",
-    title: "Inventory Cloud",
+    title: "Inventory Cloud Professional",
     issuer: "Oracle Cloud Infrastructure",
     date: "",
     credentialId: "",
-    description: "Referenced in resume.",
+    description: "Certifies ability to design enterprise structures, manage inventory transactions, handle consigned inventory, and integrate inventory systems within Oracle Supply Chain Management Cloud",
     skills: ["Cloud", "Inventory"],
     gradient: "from-orange-500/20 to-yellow-500/20",
-    logo: "☁️"
+    logo: "☁️",
+    certificateUrl: "/Inventory Cloud Professional.pdf"
   }
   // {
   //   category: "CLOUD",
@@ -192,12 +196,12 @@ const Certifications = () => {
                     </CardContent>
 
                     <CardFooter className = 'absolute bottom-0 left-0 right-0 pt-0 text-accent'>
-                    <div className="flex space-x-2 w-full">
+                    <a href = {cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="flex space-x-2 w-full">
                       <Button size="sm" variant="outline" className="flex-1">
                         <ExternalLink className="w-3 h-3 mr-1" />
                         Certificate
                       </Button>
-                    </div>
+                    </a>
                     </CardFooter>
                 </div>
               </Card>
