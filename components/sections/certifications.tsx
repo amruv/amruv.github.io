@@ -18,7 +18,7 @@ const certifications = [
     skills: ["OCI", "Data Science", "AutoML", "ML Pipeline"],
     gradient: "from-blue-500/20 to-cyan-500/20",
     logo: "🎓",
-    certificateUrl: "/OCI DS Professional.pdf"
+    certificateUrl: "Certificates/OCI DS Professional.pdf"
   },
   {
     category: "COURSE",
@@ -30,7 +30,7 @@ const certifications = [
     skills: ["Agents", "AI", "RAGs"],
     gradient: "from-purple-500/20 to-pink-500/20",
     logo: "🧠",
-    certificateUrl: "/Agentic AI.pdf"
+    certificateUrl: "Certificates/Agentic AI.pdf"
   },
   {
     category: "COURSE",
@@ -42,7 +42,7 @@ const certifications = [
     skills: ["MLOps", "Scaling"],
     gradient: "from-green-500/20 to-teal-500/20",
     logo: "⚙️",
-    certificateUrl: "/Deploying Scalable ML for Data Science.pdf"
+    certificateUrl: "Certificates/Deploying Scalable ML for Data Science.pdf"
   },
   {
     category: "CERTIFICATE",
@@ -54,7 +54,7 @@ const certifications = [
     skills: ["Cloud", "Inventory"],
     gradient: "from-orange-500/20 to-yellow-500/20",
     logo: "☁️",
-    certificateUrl: "/Inventory Cloud Professional.pdf"
+    certificateUrl: "Certificates/Inventory Cloud Professional.pdf"
   }
   // {
   //   category: "CLOUD",
