@@ -81,11 +81,11 @@ const Blog = ({ posts }: { posts: BlogPostMeta[] }) => {
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-1 text-xs text-muted-foreground">
+                        <div className="flex items-center space-x-1 text-xs text-muted-foreground test-font-inter">
                           <Calendar className="w-3 h-3" />
                           <span>{post.date}</span>
                         </div>
-                        <Button variant="ghost" size="sm" className="group-hover:text-background">
+                        <Button variant="outline" size="sm">
                           Read more
                           <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                         </Button>
