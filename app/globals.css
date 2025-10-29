@@ -54,7 +54,7 @@
 }
 
 .test-font-mono {
-  font-family: 'JetBrains Mono', monospace
+  font-family: 'JetBrains Mono', monospace;
 }
 
 * {
