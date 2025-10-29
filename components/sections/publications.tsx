@@ -10,13 +10,13 @@ import { ExternalLink, FileText, Users, Calendar } from 'lucide-react'
 const publications = [
   {
     title: "PRIVATE-AI: A Hybrid Approach to privacy-preserving AI",
-    authors: ["Sai Amruth Balusu", "Saif K.", "Siri S."],
+    authors: ["Sai Amruth Balusu", "Saif K.", "Siri S..."],
     venue: "2023 IEEE/ACIS 8th International Conference on Big Data, Cloud Computing, and Data Science (BCD)",
     year: "2023",
     type: "Conference",
     citations: 2,
     abstract: "Designed and implemented a hybrid approach to protect sensitive user data using multiple techniques.",
-    tags: ["Privacy", "ML", "Federated Learning", "Reinforcement Learning"],
+    tags: ["Privacy", "ML", "Federated Learning", "Reinforcement Learning", "Differential Privacy", "Homomorphic Encryption"],
     links: {
       paper: "https://doi.org/10.1109/BCD57833.2023.10466330",
       code: "https://github.com/amruv/Private-AI",
@@ -76,7 +76,7 @@ const Publications = () => {
                       <CardTitle className="text-xl leading-tight mb-2">
                         {paper.title}
                       </CardTitle>
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-3">
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-3 test-font-inter">
                         <div className="flex items-center gap-1">
                           <Users className="w-4 h-4" />
                           <span>{paper.authors.join(", ")}</span>
@@ -93,7 +93,7 @@ const Publications = () => {
                         {paper.venue}
                       </div>
                     </div>
-                    <div className="flex flex-col items-end gap-2">
+                    <div className="flex flex-col items-end gap-2 test-font-inter">
                       <Badge variant={paper.type === 'Journal' ? 'default' : 'secondary'}>
                         {paper.type}
                       </Badge>
@@ -115,13 +115,17 @@ const Publications = () => {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    <Button size="sm" variant="outline">
-                      <FileText className="w-3 h-3 mr-1" />
-                      Paper
+                    <Button asChild size="sm" variant="outline">
+                      <a href={paper.links.paper} target="_blank" rel="noopener noreferrer">
+                        <FileText className="w-3 h-3 mr-1" />
+                        Paper
+                      </a>
                     </Button>
-                    <Button size="sm" variant="outline">
+                    <Button asChild size="sm" variant="outline">
+                      <a href={paper.links.code} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-3 h-3 mr-1" />
                       Code
+                      </a>
                     </Button>
                     <Button 
                       size="sm" 

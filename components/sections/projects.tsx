@@ -123,9 +123,9 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Research Projects</h2>
+          <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Projects & Co.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
-            Exploring the boundaries of machine learning through innovative research and open-source contributions
+          A collection of projects and contributions to the machine learning community
           </p>
         </motion.div>
 
@@ -202,14 +202,18 @@ const Projects = () => {
 
                   <CardFooter className="absolute bottom-0 left-0 right-0 pt-0 text-accent">
                     <div className="flex space-x-2 w-full">
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <Github className="w-3 h-3 mr-1" />
-                        Code
+                      <Button asChild size="sm" variant="outline" className="flex-1">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-3 h-3 mr-1" />
+                          Code
+                        </a>
                       </Button>
                       {project.demo && (
-                        <Button size="sm" variant="outline" className="flex-1">
-                          <ExternalLink className="w-3 h-3 mr-1" />
-                          Demo
+                        <Button asChild size="sm" variant="outline" className="flex-1">
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-3 h-3 mr-1" />
+                            Demo
+                          </a>
                         </Button>
                       )}
                     </div>

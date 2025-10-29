@@ -29,7 +29,7 @@ const certifications = [
     description: "Covers building autonomous AI agents capable of independent decision-making and task execution through data-first architectural approaches and modern agentic AI frameworks.",
     skills: ["Agents", "AI", "RAGs"],
     gradient: "from-purple-500/20 to-pink-500/20",
-    logo: "🧠",
+    logo: "⚙️",
     certificateUrl: "Certificates/Agentic AI.pdf"
   },
   {
@@ -53,7 +53,7 @@ const certifications = [
     description: "Certifies ability to design enterprise structures, manage inventory transactions, handle consigned inventory, and integrate inventory systems within Oracle Supply Chain Management Cloud",
     skills: ["Cloud", "Inventory"],
     gradient: "from-orange-500/20 to-yellow-500/20",
-    logo: "☁️",
+    logo: "🎓",
     certificateUrl: "Certificates/Inventory Cloud Professional.pdf"
   }
   // {
@@ -165,7 +165,7 @@ const Certifications = () => {
                     <CardTitle className="text-lg font-semibold leading-tight">
                       {cert.title}
                     </CardTitle>
-                    <div className="text-sm text-accent font-medium">
+                    <div className="text-sm text-accent font-bold test-font-mono">
                       {cert.issuer}
                     </div>
                   </CardHeader>
