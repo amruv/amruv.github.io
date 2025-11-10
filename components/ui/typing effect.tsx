@@ -60,11 +60,16 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   }, [displayText, currentIndex, isDeleting, isPaused, texts, speed, deleteSpeed, pauseDuration]);
 
   return (
-    <span className={className} style={{
-      display: 'inline-block',
-      whiteSpace: 'nowrap',
-      minWidth: `${maxLen}ch`
-    }}>
+    <span
+      className={className}
+      style={{
+        display: 'inline-block',
+        whiteSpace: 'nowrap',
+        minWidth: `min(${maxLen}ch, 100%)`,
+        maxWidth: '100%',
+        overflow: 'hidden',
+      }}
+    >
       {displayText}
       <span className="animate-pulse">|</span>
     </span>
