@@ -82,21 +82,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div className="flex flex-wrap gap-2 mb-8">
             {data.tags?.map((tag: string, index: number) => (
-              <Badge key={index} variant="secondary" className="text-sm text-accent">
+              <Badge key={index} variant="outline" className="text-accent">
                 {tag}
               </Badge>
             ))}
           </div>
 
           <div className="flex items-center gap-4 pb-8 border-b border-border">
-            <Button variant="outline" size="sm" className="test-font-mono">
+            {/* <Button variant="outline" size="sm" className="test-font-mono">
               <Share2 className="w-4 h-4 mr-2" />
               Share
             </Button>
             <Button variant="outline" size="sm" className="test-font-mono">
               <BookOpen className="w-4 h-4 mr-2" />
               Save
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

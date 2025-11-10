@@ -54,7 +54,7 @@ export default function BlogGrid({ posts }: { posts: BlogPostMeta[] }) {
 
                   <div className="flex flex-wrap gap-1 mb-4">
                     {post.tags?.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="secondary" className="text-xs">
+                      <Badge key={tagIndex} variant="outline" className="text-xs">
                         {tag}
                       </Badge>
                     ))}
