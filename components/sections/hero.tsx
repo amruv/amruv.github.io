@@ -19,7 +19,15 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="relative text-5xl lg:text-5xl font-bold mb-10">
-            <TypingAnimation texts={["Sai Amruth Balusu."]} className="text-primary test-font-courier" />
+              <span className="text-primary test-font-courier md:hidden">
+                Sai Amruth Balusu.
+              </span>
+              <span className="hidden md:block">
+                <TypingAnimation
+                  texts={['Sai Amruth Balusu.']}
+                  className="text-primary test-font-courier"
+                />
+              </span>
               <br />
               <span className="text-4xl text-accent test-font-inter">ML Engineer</span>
             </h1>
