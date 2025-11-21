@@ -3,16 +3,34 @@ import { cn } from "@/lib/utils"
 
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement> & { image?: string }
+>(({ className, image, children, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
       "relative rounded-xl border bg-card text-card-foreground shadow",
+      image ? "flex flex-col overflow-hidden" : "",
       className
     )}
     {...props}
-  />
+  >
+    {image ? (
+      <>
+        <div className="w-full shrink-0 overflow-hidden">
+          <img
+            src={image}
+            alt=""
+            className="h-auto w-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="flex-1 w-full overflow-y-auto">
+          {children}
+        </div>
+      </>
+    ) : (
+      children
+    )}
+  </div>
 ))
 Card.displayName = "Card"
 

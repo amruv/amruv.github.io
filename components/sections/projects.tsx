@@ -17,6 +17,7 @@ type Project = {
   github: string
   demo?: string
   gradient: string
+  image?: string
 }
 
 const projects: Project[] = [
@@ -34,6 +35,7 @@ const projects: Project[] = [
     github: "https://github.com/amruv/Private-AI",
     // demo: "https://github.com/amruv/Private-AI",
     gradient: "from-cyan-500/20 to-blue-500/20"
+    // image: "/Media/Private-AI.png"
   },
   {
     category: "Product",
@@ -48,7 +50,8 @@ const projects: Project[] = [
     technologies: ["TypeScript", "Node.js"],
     github: "https://github.com/amruv/ScoutSmart-Dev",
     // demo: "https://github.com/amruv/ScoutSmart-Dev",
-    gradient: "from-teal-500/20 to-emerald-500/20"
+    gradient: "from-teal-500/20 to-emerald-500/20",
+    image: "/Media/ScoutSmart.png"
   }
   // {
   //   category: "DEEP LEARNING",
@@ -125,7 +128,7 @@ const Projects = () => {
         >
           <h2 className="text-4xl font-bold mb-4 test-font-courier text-accent">Projects & Co.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
-          A collection of projects and contributions to the machine learning community
+            A collection of projects and contributions to the machine learning community
           </p>
         </motion.div>
 
@@ -138,10 +141,13 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="relative h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
+              <Card
+                className="relative h-full hover:shadow-lg transition-all duration-300 group overflow-hidden"
+                image={project.image}
+              >
                 {/* Gradient background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                
+
                 <div className="overflow-y-auto pb-20">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-2">
