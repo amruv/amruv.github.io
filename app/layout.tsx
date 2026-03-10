@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'Sai Amruth Balusu',
     images: [
       {
-        url: '/og-image.png',
+        url: '/ScoutSmart Short Logo.png',
         width: 1200,
         height: 630,
         alt: 'Sai Amruth Balusu - ML Researcher',
@@ -29,7 +29,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sai Amruth Balusu - ML Researcher',
     description: 'Personal website showcasing research, publications, and projects in machine learning.',
-    images: ['/og-image.png'],
+    images: ['/ScoutSmart Short Logo.png'],
+  },
+  icons: {
+    icon: '/ScoutSmart Short Logo.png'
   },
 }
 
