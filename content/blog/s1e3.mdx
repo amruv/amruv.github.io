@@ -81,6 +81,36 @@ Finally, the outputs from all the attention heads are then concatenated and pass
 
 Using multiple processes of attention independently in parallel allows us to identify different types of semantics in the same input sentence. For instance, one head may focus on the understanding of how the verb relates to the subject of a sentence. Another head may reveal how the preposition ties the sentence together. Putting all these understandings together, the transformer arrives at a context rich meaning of any given sentence.
 
+## Masked Multi-Head Attention
+
+**[tl;dr]** While the Multi-Head Attention mechanism is the heartbeat of the transformer, transformers are constructed with a variation of the mechanism. The **Masked Multi-Head Attention** is designed for the decoder process of the Transformer and it is used primarily to render the model incapable of looking forward to the upcoming/next tokens in an input while it is in the process of predicting the next token during the training phase (preventing cheating, really). This forces the model to actually predict the next word rather than just reading it (which in the training phase is the best rewarding method).
+
+### Why plain, old MHA doesn't work...
+
+Standard self-attention (a single head's process) is designed to be bidirectional, meaning every word looks at every other word (no past or future; just everything, all at once). This is fine for an Encoder model (like BERT) which tries to understand a whole sentence at once, which could be helpful for translation or summarisation. The issue arises during training as we need a way to make the model 'learn' to predict the next token, rather than just copy by looking ahead at it. We, therefore, need a way to blindfold the model to the future tokens to give it the ability to predict the next token.
+
+### Implementation
+
+The solution to overcome this problem was to introduce the concept of **causal masking** (or look-ahead masking) to the Multi-Head Attention block in the decoder. The logic is that for the calculation of the attention scores for position *i*, the model is only allowed to attend to positions 0 to *i* and any position greater than *i* is off-limits.
+
+```
+Attention(Q, K, V) = softmax((QK^T + M) / √d_k) V
+```
+![Masked Multi-Head Attention Formulae](/Images/masked_mha_formula.png)
+
+
+A look-ahead masked matrix, ***M***, is introduced which is a square matrix of sequence length where:
+
+- **The lower triangle and the matrix diagonal is set to 0s** — these positions refer to the 'past' and 'present' tokens that are allowed to be seen.
+
+- **The upper triangle is filled with negative infinity (-∞)** — which represent the future tokens that aren't allowed to be seen.
+
+The masked matrix, ***M*** is then added to the computation of the scaled dot-product score matrix (QK<sup>T</sup>/√d<sub>k</sub>) before passing through the softmax function.
+
+> **Note:** Negative infinity is used in ***M*** because when we apply the softmax function to turn these scores into probabilities (ranging from 0 to 1), the function exponentiates the values — because e<sup>-∞</sup> approaches 0, the attention weights for all future tokens become exactly 0, and therefore cannot be 'seen'.
+
+![Masked MHA Diagram](/Images/masked_pic.png)
+
 ---
 
 *This is part 3 of the series 'How tf do LLMs work?'. Stay tuned for the next part where we explore feed-forward networks and layer normalization!*
@@ -90,3 +120,5 @@ Using multiple processes of attention independently in parallel allows us to ide
 [1] Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.
 
 [2] "A Deep Dive into the Self-Attention Mechanism of Transformers" blog post by Shreya Srivastava - *Image Credits*
+
+[3] "Everything About Transformers" blog post by Krupa Dave - *Image Credits* (Masked Multi-Head Attention Diagram)
