@@ -1,6 +1,6 @@
 ---
 title: "How tf do LLMs work? - Part 3: Multi-Head Attention"
-description: "Understanding the attention mechanism - the engine that powers transformers"
+description: "Understanding the attention mechanism - the engine that powers transformers and a deep dive into Masked Multi-Head Attention and how it's used in the current iteration of transformers."
 date: "2025-09-28"
 readTime: "12 min read"
 tags: ["transformers", "llm", "attention", "multi-head-attention", "self-attention", "masked-multi-head-attention"]
@@ -80,6 +80,9 @@ Finally, the outputs from all the attention heads are then concatenated and pass
 ## Why Multi-Head Attention is Crucial for Context Understanding
 
 Using multiple processes of attention independently in parallel allows us to identify different types of semantics in the same input sentence. For instance, one head may focus on the understanding of how the verb relates to the subject of a sentence. Another head may reveal how the preposition ties the sentence together. Putting all these understandings together, the transformer arrives at a context rich meaning of any given sentence.
+
+
+<div style={{width: '100%', borderTop: '2px dashed var(--accent)', opacity: 0.5}} />
 
 # Masked Multi-Head Attention
 
