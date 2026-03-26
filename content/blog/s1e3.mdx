@@ -81,7 +81,7 @@ Finally, the outputs from all the attention heads are then concatenated and pass
 
 Using multiple processes of attention independently in parallel allows us to identify different types of semantics in the same input sentence. For instance, one head may focus on the understanding of how the verb relates to the subject of a sentence. Another head may reveal how the preposition ties the sentence together. Putting all these understandings together, the transformer arrives at a context rich meaning of any given sentence.
 
-## Masked Multi-Head Attention
+# Masked Multi-Head Attention
 
 **[tl;dr]** While the Multi-Head Attention mechanism is the heartbeat of the transformer, transformers are constructed with a variation of the mechanism. The **Masked Multi-Head Attention** is designed for the decoder process of the Transformer and it is used primarily to render the model incapable of looking forward to the upcoming/next tokens in an input while it is in the process of predicting the next token during the training phase (preventing cheating, really). This forces the model to actually predict the next word rather than just reading it (which in the training phase is the best rewarding method).
 
