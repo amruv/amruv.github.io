@@ -33,8 +33,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl test-font-mono text-muted-foreground mb-8 leading-relaxed">
-              Hi Aashu, you suck :)
-              <br />
+              {/* Hi Aashu, you suck :) */}
               The only way I know how to will my imprint on this world is through building things using math and novel algorithms.
               {/* Passionate about advancing the frontiers of artificial intelligence through 
               cutting-edge research in machine learning, deep learning, and neural networks. 
