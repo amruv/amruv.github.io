@@ -10,7 +10,7 @@
     --foreground: #2C3E50;
     --card: #FFFBEF;
     --card-foreground: #8B4513;
-    --popover: #FFFBEF; 
+    --popover: #FFFBEF;
     --popover-foreground: #777777;
     --primary: #CC5500;
     --primary-foreground: #FFFBEF;
@@ -26,8 +26,10 @@
     --input: #FFFBEF;
     --ring: #CC5500;
     --radius: 0.75rem;
+    --hero: #FFEABA;
   }
 }
+
 /* 
 :root {
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -71,5 +73,3 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-

@@ -44,6 +44,7 @@ const config: Config = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        hero: "var(--hero)",
       },
       borderRadius: {
         lg: "var(--radius)",

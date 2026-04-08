@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import React from 'react'
 import Navigation from '@/components/navigation'
-import Hero from '@/components/sections/hero'
+import Hero from '@/components/sections/hero2'
 import Experience from '@/components/sections/experience'
 import Projects from '@/components/sections/projects'
 import Publications from '@/components/sections/publications'
@@ -36,13 +36,13 @@ export default function Home() {
         <Certifications />
         <Contact />
       </div>
-      
+
       {/* Footer */}
       <footer className="bg-secondary/50 py-8 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="test-font-mono text-primary">
-            © 2025 Sai Amruth Balusu. 
-            </p>
+            © 2025 Sai Amruth Balusu.
+          </p>
           <p className="test-font-mono text-accent"> All rights reserved. Built with Next.js and Tailwind CSS.
           </p>
         </div>

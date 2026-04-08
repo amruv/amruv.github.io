@@ -6,6 +6,7 @@ interface TypingAnimationProps {
   deleteSpeed?: number;
   pauseDuration?: number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const TypingAnimation: React.FC<TypingAnimationProps> = ({
@@ -13,7 +14,8 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   speed = 100,
   deleteSpeed = 50,
   pauseDuration = 2000,
-  className = ""
+  className = "",
+  style,
 }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,8 +68,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
         display: 'inline-block',
         whiteSpace: 'nowrap',
         minWidth: `min(${maxLen}ch, 100%)`,
-        maxWidth: '100%',
-        overflow: 'hidden',
+        ...style,
       }}
     >
       {displayText}
