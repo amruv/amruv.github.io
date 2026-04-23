@@ -87,7 +87,7 @@ export default function BlogGrid({ posts }: { posts: BlogPostMeta[] }) {
                     <Calendar className="w-3 h-3" />
                     <span>{post.date}</span>
                   </div>
-                  <Button variant="outline" size="sm" className={`text-accent transition-colors`}>
+                  <Button variant="transparent" size="sm" className={`text-accent transition-colors ${hasImage ? 'group-hover:text-white group-hover: bg-transparent group-hover:border-white/40' : ''}`}>
                     Read more
                     <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                   </Button>
