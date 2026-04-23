@@ -4,25 +4,25 @@ import { MDXProvider } from '@mdx-js/react'
 
 const components = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="mt-8 mb-6 text-3xl md:text-4xl font-bold text-primary test-font-courier" {...props} />
+    <h1 className="mt-8 mb-6 text-3xl md:text-4xl font-bold text-primary test-font-courier text-justify" {...props} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="mt-10 mb-6 text-2xl md:text-3xl font-bold text-accent test-font-courier " {...props} />
+    <h2 className="mt-10 mb-6 text-2xl md:text-3xl font-bold text-accent test-font-courier text-justify" {...props} />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="mt-6 mb-3 text-xl md:text-2xl font-semibold text-foreground test-font-courier" {...props} />
+    <h3 className="mt-6 mb-3 text-xl md:text-2xl font-semibold text-foreground test-font-courier text-justify" {...props} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="mb-4 leading-relaxed test-font-mono" {...props} />
+    <p className="mb-4 leading-relaxed test-font-mono text-justify" {...props} />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="list-disc pl-6 mb-4" {...props} />
+    <ul className="list-disc pl-6 mb-4 text-justify" {...props} />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal pl-6 mb-4" {...props} />
+    <ol className="list-decimal pl-6 mb-4 text-justify" {...props} />
   ),
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li className="mb-1" {...props} />
+    <li className="mb-1 text-justify" {...props} />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a className="text-primary underline hover:no-underline" {...props} />
@@ -34,7 +34,7 @@ const components = {
     <pre className="mb-4 p-4 rounded bg-muted overflow-x-auto" {...props} />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLElement>) => (
-    <blockquote className="border-l-4 border-accent pl-4 italic mb-4" {...props} />
+    <blockquote className="border-l-4 border-accent pl-4 italic mb-4 text-justify" {...props} />
   ),
   hr: () => <hr className="my-8 border-border" />,
 }
