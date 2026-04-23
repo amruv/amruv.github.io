@@ -1,13 +1,13 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Card, CardContent } from "@/components/ui/card";
 import MdxPost from "./MdxPost.client";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft, Share2, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "content/blog");
@@ -42,13 +42,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Header */}
       <div className="bg-background border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-between">
             <Link href="/blog">
               <Button variant="ghost" size="sm" className="test-font-mono">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Blog
               </Button>
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </div>
@@ -103,20 +104,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-6 pb-20">
-        <Card className="border-0 shadow-none">
-          <CardContent className="p-0">
-            <div
-              className="prose prose-lg max-w-none test-font-mono"
-              style={{
-                color: "var(--foreground)",
-                lineHeight: "1.7",
-              }}
-            >
-              {/* <MdxPost content={content} frontmatter={data} /> */}
-              <MdxPost slug={params.slug} />
-            </div>
-          </CardContent>
-        </Card>
+        <div
+          className="prose prose-lg max-w-none test-font-mono"
+          style={{
+            color: "var(--foreground)",
+            lineHeight: "1.7",
+          }}
+        >
+          {/* <MdxPost content={content} frontmatter={data} /> */}
+          <MdxPost slug={params.slug} />
+        </div>
       </div>
     </main>
   );

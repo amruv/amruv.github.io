@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ThemeToggle from '@/components/ui/theme-toggle'
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('')
@@ -129,11 +130,13 @@ const Navigation = () => {
                 )}
               </motion.button>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button className="text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button className="text-foreground md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>

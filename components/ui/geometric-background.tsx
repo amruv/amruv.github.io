@@ -26,10 +26,11 @@ const GeometricBackground: React.FC<GeometricBackgroundProps> = ({ className = '
     const drawGeometricPattern = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
-      // Set up colors with transparency - all using #2C3E50
-      const primaryColor = 'rgba(44, 62, 80, 0.08)' // #2C3E50 with low opacity
-      const accentColor = 'rgba(44, 62, 80, 0.06)' // #2C3E50 with lower opacity
-      const mutedColor = 'rgba(44, 62, 80, 0.04)' // #2C3E50 with very low opacity
+      // Read theme-aware colors from CSS custom properties
+      const styles = getComputedStyle(document.documentElement)
+      const primaryColor = styles.getPropertyValue('--geo-primary').trim() || 'rgba(44, 62, 80, 0.08)'
+      const accentColor = styles.getPropertyValue('--geo-accent').trim() || 'rgba(44, 62, 80, 0.06)'
+      const mutedColor = styles.getPropertyValue('--geo-muted').trim() || 'rgba(44, 62, 80, 0.04)'
 
       // Generate distributed points across the entire canvas
       const points: Array<{x: number, y: number, size: number, color: string}> = []

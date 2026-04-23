@@ -10,7 +10,7 @@
     --foreground: #2C3E50;
     --card: #FFFBEF;
     --card-foreground: #8B4513;
-    --popover: #FFFBEF; 
+    --popover: #FFFBEF;
     --popover-foreground: #777777;
     --primary: #CC5500;
     --primary-foreground: #FFFBEF;
@@ -26,8 +26,37 @@
     --input: #FFFBEF;
     --ring: #CC5500;
     --radius: 0.75rem;
+    --geo-primary: rgba(44, 62, 80, 0.08);
+    --geo-accent: rgba(44, 62, 80, 0.06);
+    --geo-muted: rgba(44, 62, 80, 0.04);
+  }
+
+  .dark {
+    --background: #1a2332;
+    --foreground: #b0b8c1;
+    --card: #213043;
+    --card-foreground: #e0a96d;
+    --popover: #213043;
+    --popover-foreground: #b0b8c1;
+    --primary: #CC5500;
+    --primary-foreground: #1a2332;
+    --secondary: #213043;
+    --secondary-foreground: #e0a96d;
+    --muted: #8FAA92;
+    --muted-foreground: #b0b8c1;
+    --accent: #8FAA92;
+    --accent-foreground: #1a2332;
+    --destructive: #c94a3a;
+    --destructive-foreground: #b0b8c1;
+    --border: #3a5068;
+    --input: #213043;
+    --ring: #e07020;
+    --geo-primary: rgba(255, 251, 239, 0.06);
+    --geo-accent: rgba(255, 251, 239, 0.04);
+    --geo-muted: rgba(255, 251, 239, 0.03);
   }
 }
+
 /* 
 :root {
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -58,18 +87,17 @@
 }
 
 * {
-  border-color: hsl(var(--border));
+  border-color: var(--border);
 }
 
 body {
-  color: #2C3E50;
-  background: #FFFBEF;
+  color: var(--foreground);
+  background: var(--background);
   font-family: 'JetBrains Mono', monospace;
   font-feature-settings: "rlig" 1, "calt" 1;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
-

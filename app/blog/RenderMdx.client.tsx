@@ -13,28 +13,31 @@ const components = {
     <h3 className="mt-6 mb-3 text-xl md:text-2xl font-semibold text-foreground test-font-courier text-justify" {...props} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="mb-4 leading-relaxed test-font-mono text-justify" {...props} />
+    <p className="mb-4 leading-relaxed test-font-mono text-justify text-foreground" {...props} />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="list-disc pl-6 mb-4 text-justify" {...props} />
+    <ul className="list-disc pl-6 mb-4 text-justify text-foreground" {...props} />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal pl-6 mb-4 text-justify" {...props} />
+    <ol className="list-decimal pl-6 mb-4 text-justify text-foreground" {...props} />
   ),
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li className="mb-1 text-justify" {...props} />
+    <li className="mb-1 text-justify text-foreground" {...props} />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a className="text-primary underline hover:no-underline" {...props} />
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => (
-    <code className="px-1.5 py-0.5 rounded bg-muted text-[0.9em]" {...props} />
+    <code className="px-1.5 py-0.5 rounded bg-muted text-foreground text-[0.9em]" {...props} />
   ),
   pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre className="mb-4 p-4 rounded bg-muted overflow-x-auto" {...props} />
+    <pre className="mb-4 p-4 rounded bg-muted text-foreground overflow-x-auto" {...props} />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLElement>) => (
     <blockquote className="border-l-4 border-accent pl-4 italic mb-4 text-justify" {...props} />
+  ),
+  strong: (props: React.HTMLAttributes<HTMLElement>) => (
+    <strong className="font-bold text-foreground" {...props} />
   ),
   hr: () => <hr className="my-8 border-border" />,
 }
