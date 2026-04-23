@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
@@ -30,8 +30,8 @@ export default function BlogGrid({ posts }: { posts: BlogPostMeta[] }) {
         >
           <Link href={`/blog/${post.slug}`}>
             <Card className="h-full hover:shadow-lg transition-all duration-300 group overflow-hidden cursor-pointer">
-              <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient ?? ''} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-              <div className="relative z-10">
+
+              <div className="relative z-10 overflow-y-auto pb-16">
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline" className="text-xs font-medium">
@@ -60,18 +60,19 @@ export default function BlogGrid({ posts }: { posts: BlogPostMeta[] }) {
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-1 text-xs text-muted-foreground">
-                      <Calendar className="w-3 h-3" />
-                      <span>{post.date}</span>
-                    </div>
-                    <Button variant="outline" size="sm" className=" text-accent">
-                      Read more
-                      <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
                 </CardContent>
               </div>
+
+              <CardFooter className="absolute bottom-0 left-0 right-0 flex items-center justify-between">
+                <div className="flex items-center space-x-1 text-xs text-muted-foreground">
+                  <Calendar className="w-3 h-3" />
+                  <span>{post.date}</span>
+                </div>
+                <Button variant="outline" size="sm" className=" text-accent">
+                  Read more
+                  <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </CardFooter>
             </Card>
           </Link>
         </motion.div>
