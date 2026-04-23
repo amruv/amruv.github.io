@@ -37,7 +37,7 @@ Before the release of the paper, attention mechanisms existed, but they were alm
 
 However, the limitation remained the RNN backbone. The entire process was still constrained by the sequential bottleneck of the RNN. Attention was an enhancement, not the core engine.
 
-The groundbreaking research paper [**"Attention Is All You Need" by Vaswani et al., 2017**](https://arxiv.org/pdf/1706.03762) [1] posed a radical question: what if we discarded the recurrence entirely and built a model architecture solely based on attention?
+The groundbreaking research paper ["Attention Is All You Need" by Vaswani et al., 2017 [1]](https://arxiv.org/pdf/1706.03762) posed a radical question: what if we discarded the recurrence entirely and built a model architecture solely based on attention?
 
 The research demonstrated that self-attention was not just an add-on; it was powerful enough on its own to handle complex sequence modelling tasks. By removing the dependency on a recurring (and sequential) architecture, they unlocked the potential for massive parallelisation.
 
@@ -45,7 +45,7 @@ The research demonstrated that self-attention was not just an add-on; it was pow
 >
 > **Hardware Utilisation:** Modern processors (GPUs (Graphics)/TPUs (Tensors)) are parallel processors with thousands of cores. Model architectures that can be expressed as a series of large, independent calculations (matrix multiplications) will run exponentially faster than any sequential model ever could.
 >
-> **Scaling Law:** (Predictable relationship shown by a lot of research) The bigger the model (more parameters) and the more data you train it on, the better it performs. This was the driving force behind the first few generations of LLMs. *(Note: this is a huge point of contention lately as it seems that the scaling graph has plateaued somewhat i.e. LLM providers have seemed to hit a wall in terms of scaling up parameters, compute, and training data. For more info, please check out this exceptional [blog piece by Dr, Cameron R. Wolfe](https://cameronrwolfe.substack.com/p/llm-scaling-laws) [2] about how scaling laws are applicable to LLMs and exploring other paths to drive AI progress forward.)*
+> **Scaling Law:** (Predictable relationship shown by a lot of research) The bigger the model (more parameters) and the more data you train it on, the better it performs. This was the driving force behind the first few generations of LLMs. *(Note: this is a huge point of contention lately as it seems that the scaling graph has plateaued somewhat i.e. LLM providers have seemed to hit a wall in terms of scaling up parameters, compute, and training data. For more info, please check out this exceptional [blog piece by Dr, Cameron R. Wolfe [2]](https://cameronrwolfe.substack.com/p/llm-scaling-laws) about how scaling laws are applicable to LLMs and exploring other paths to drive AI progress forward.)*
 >
 > **Feasibility:** Parallel processing is what makes this scaling law possible in LLMs. Without it, training a 100+ billion parameter model would take years or decades, making it practically impossible. The Transformer's parallel-friendly design is the single biggest reason we have been able to witness the scaling of models to their current size (and capability).
 
@@ -69,4 +69,4 @@ The original Transformer from the paper featured an **Encoder-Decoder** architec
 
 [1] Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.
 
-[2] Wolfe, C. R. (2024). LLM Scaling Laws. Retrieved from https://cameronrwolfe.substack.com/p/llm-scaling-laws
+[2] Wolfe, C. R. (2024). LLM Scaling Laws. Retrieved from [https://cameronrwolfe.substack.com/p/llm-scaling-laws](https://cameronrwolfe.substack.com/p/llm-scaling-laws)
