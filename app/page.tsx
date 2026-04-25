@@ -36,14 +36,14 @@ export default function Home() {
         <Certifications />
         <Contact />
       </div>
-      
+
       {/* Footer */}
       <footer className="bg-secondary/50 py-8 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="test-font-mono text-primary">
-            © 2025 Sai Amruth Balusu. 
-            </p>
-          <p className="test-font-mono text-accent"> All rights reserved. Built with Next.js and Tailwind CSS.
+            © 2026 Sai Amruth Balusu.
+          </p>
+          <p className="test-font-mono text-accent"> All rights reserved.
           </p>
         </div>
       </footer>
