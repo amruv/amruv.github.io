@@ -2,12 +2,27 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ExternalLink, Award, Calendar } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 
-const certifications = [
+type Certification = {
+  category: string
+  title: string
+  issuer: string
+  date: string
+  credentialId: string
+  description: string
+  skills: string[]
+  gradient: string
+  logo: string
+  bgImage: string
+  certificateUrl: string
+}
+
+const certifications: Certification[] = [
   {
     category: "CERTIFICATE",
     title: "OCI Data Science Professional",
@@ -18,7 +33,8 @@ const certifications = [
     skills: ["OCI", "Data Science", "AutoML", "ML Pipeline"],
     gradient: "from-blue-500/20 to-cyan-500/20",
     logo: "🎓",
-    certificateUrl: "Certificates/OCI DS Professional.pdf"
+    bgImage: "/Images/Certifications/oci-data-science.png",
+    certificateUrl: "/Certificates/OCI DS Professional.pdf"
   },
   {
     category: "COURSE",
@@ -30,7 +46,8 @@ const certifications = [
     skills: ["Agents", "AI", "RAGs"],
     gradient: "from-purple-500/20 to-pink-500/20",
     logo: "⚙️",
-    certificateUrl: "Certificates/Agentic AI.pdf"
+    bgImage: "/Images/Certifications/agentic-ai-network.jpg",
+    certificateUrl: "/Certificates/Agentic AI Building DataFirst AI Agents.pdf"
   },
   {
     category: "COURSE",
@@ -42,7 +59,8 @@ const certifications = [
     skills: ["MLOps", "Scaling"],
     gradient: "from-green-500/20 to-teal-500/20",
     logo: "⚙️",
-    certificateUrl: "Certificates/Deploying Scalable ML for Data Science.pdf"
+    bgImage: "/Images/Certifications/scalable-ml-infrastructure.jpg",
+    certificateUrl: "/Certificates/Deploying Scalable Machine Learning for Data Science.pdf"
   },
   {
     category: "CERTIFICATE",
@@ -54,7 +72,8 @@ const certifications = [
     skills: ["Cloud", "Inventory"],
     gradient: "from-orange-500/20 to-yellow-500/20",
     logo: "🎓",
-    certificateUrl: "Certificates/Inventory Cloud Professional.pdf"
+    bgImage: "/Images/Certifications/inventory-logistics.jpg",
+    certificateUrl: "/Certificates/Inventory Cloud.pdf"
   }
   // {
   //   category: "CLOUD",
@@ -142,46 +161,63 @@ const Certifications = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card className="relative h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
-                {/* Gradient background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${cert.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                
-                <div className="overflow-y-auto pb-20">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="outline" className="text-xs font-medium text-accent test-font-inter">
-                        {cert.category}
-                      </Badge>
-                      <div className="text-2xl">{cert.logo}</div>
-                    </div>
-                    <CardTitle className="text-lg font-semibold leading-tight">
-                      {cert.title}
-                    </CardTitle>
-                    <div className="text-sm text-accent font-bold test-font-mono">
-                      {cert.issuer}
-                    </div>
-                  </CardHeader>
+          {certifications.map((cert, index) => {
+            const hasImage = !!cert.bgImage
 
-                  <CardContent className="pb-4">
-                    <CardDescription className="text-sm leading-relaxed mb-4 test-font-inter">
-                      {cert.description}
-                    </CardDescription>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="relative h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
+                  {hasImage && (
+                    <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none overflow-hidden">
+                      <Image
+                        src={cert.bgImage}
+                        alt={cert.title}
+                        fill
+                        className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-black/60" />
+                    </div>
+                  )}
 
-                    <div className="flex flex-wrap gap-1 mb-4 test-font-inter">
-                      {cert.skills.map((skill, skillIndex) => (
-                        <Badge key={skillIndex} variant="outline" className="text-xs">
-                          {skill}
+                  {!hasImage && (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${cert.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  )}
+
+                  <div className="relative z-30 overflow-y-auto pb-20">
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="outline" className={`text-xs font-medium text-accent test-font-inter transition-colors ${hasImage ? 'group-hover:text-white group-hover:border-white/50' : ''}`}>
+                          {cert.category}
                         </Badge>
-                      ))}
-                    </div>
+                        <div className="text-2xl">{cert.logo}</div>
+                      </div>
+                      <CardTitle className={`text-lg font-semibold leading-tight transition-colors ${hasImage ? 'group-hover:text-white group-hover:drop-shadow-md' : ''}`}>
+                        {cert.title}
+                      </CardTitle>
+                      <div className={`text-sm text-accent font-bold test-font-mono transition-colors ${hasImage ? 'group-hover:text-gray-200' : ''}`}>
+                        {cert.issuer}
+                      </div>
+                    </CardHeader>
+
+                    <CardContent className="pb-4">
+                      <CardDescription className={`text-sm leading-relaxed mb-4 test-font-inter transition-colors ${hasImage ? 'group-hover:text-gray-200' : ''}`}>
+                        {cert.description}
+                      </CardDescription>
+
+                      <div className="flex flex-wrap gap-1 mb-4 test-font-inter">
+                        {cert.skills.map((skill, skillIndex) => (
+                          <Badge key={skillIndex} variant="outline" className={`text-xs transition-colors ${hasImage ? 'group-hover:text-white group-hover:border-white/40' : ''}`}>
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
 
                     {/* <div className="space-y-2">
                       <div className="flex items-center space-x-2 text-xs text-muted-foreground">
@@ -195,18 +231,19 @@ const Certifications = () => {
                     </div> */}
                     </CardContent>
 
-                    <CardFooter className = 'absolute bottom-0 left-0 right-0 pt-0 text-accent'>
-                    <a href = {cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="flex space-x-2 w-full">
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        Certificate
-                      </Button>
-                    </a>
+                    <CardFooter className="absolute bottom-0 left-0 right-0 pt-0 text-accent">
+                    <a href={cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="flex space-x-2 w-full">
+                      <Button size="sm" variant="outline" className={`flex-1 transition-colors ${hasImage ? 'group-hover:bg-transparent group-hover:text-white group-hover:border-white/40' : ''}`}>
+                          <ExternalLink className="w-3 h-3 mr-1" />
+                          Certificate
+                        </Button>
+                      </a>
                     </CardFooter>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+                  </div>
+                </Card>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -214,5 +251,3 @@ const Certifications = () => {
 }
 
 export default Certifications
-
-
