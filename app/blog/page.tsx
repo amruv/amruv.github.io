@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-// import Link from "next/link";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const postsDir = path.join(process.cwd(), "content/blog/");
 
@@ -95,9 +96,16 @@ export default function BlogPage() {
             <h1 className="text-5xl font-bold mb-4 test-font-courier text-primary">
               Blog
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono mb-6">
               Sharing insights, tutorials, and thoughts on machine learning research and development
             </p>
+            <div className="flex justify-center">
+              <Link href="/blog/series">
+                <Button variant="outline" size="sm" className="test-font-mono text-accent">
+                  🧪 View Lab Notebook Series
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
