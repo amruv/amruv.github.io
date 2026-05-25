@@ -1,0 +1,94 @@
+---
+title: "How tf do LLMs work? - Part 4: The Supporting Cast"
+description: "Layer normalisation, residual connections, and feed-forward networks: the stabilising components that make transformer blocks trainable and useful."
+date: "2025-10-05"
+readTime: "7 min read"
+tags: ["transformers", "llm", "layer-normalization", "residual-connections", "feed-forward-networks"]
+series: "How tf do LLMs work?"
+category: 'EXPLAINER'
+part: 4
+gradient: "from-orange-500/20 to-emerald-500/20"
+coverImage: "/Images/transformers.png"
+---
+
+Now that we've looked into the engine of the transformer - the **Multi-Head Attention** mechanism, let's delve deep into the often less talked about components of the transformer - **Layer Normalisation**, **Residual Connections**, and **(Position-wise) Feed Forward Networks (FFN)**. These are equally important to pay heed to because while the attention mechanism (in all its forms and glory) gathers information, these components understand and stabilise the information and ensure the transformer provides a relevant, context-rich output.
+
+# The Stabilisers - Add & Norm
+
+In deep architectures like transformers, training comes with its own challenges.
+
+1. **Vanishing Gradients** - Learning in deep neural networks happens via backpropagation, sending signals (called learning signals) backwards through the layers to update weights or learn. Every time this signal passes through a complex layer (involving matrix multiplications and activations), it gets attenuated (multiplied by small numbers). In a 100-layer network, by the time the signal reaches the first layer, it's essentially zero. The model stops learning.
+
+2. **Numeric Instability and Exploding Gradients** - Unstable, massive values bouncing around a neural network lead to exploding gradients (learning signal goes to infinity) and numeric instability.
+
+This is why every "thinking" component (MHAs and Feed-Forward Networks) is accompanied by a component that stabilises the "thinking" output by taking care of the above mentioned challenges.
+
+## Add - Residual Connections
+
+A **Residual Connection** allows the bypassing of a component's (or layer's) computation by taking the original input of the component and adding it directly to the output of the component.
+
+If *x* is the input to the component and then *Component(x)* is the calculated output, then:
+
+```
+Output = x + Component(x)
+```
+
+By adding the original input to the output of a component, this ensures that the learning gradient can never die, or go to 0 and therefore, solves the problem of the vanishing gradient.
+
+## Norm - Layer Normalisation
+
+Normalisation ensures that the inputs to the next layer are on a consistent scale, making the optimisation landscape much smoother and training drastically faster.
+
+After the 'Add' function, the resulting calculation can have significantly varying values (from infinity to -infinity). Normalisation forces these numbers to adhere to a predictable baseline distribution - typically the normal distribution (mean of 0 and variance of 1). This handles the second problem outlined above by pulling all the numbers back to a predictable output.
+
+The final output after the 'Add & Norm' looks something like this:
+
+```
+Output = LayerNorm(x + Component(x))
+```
+
+# Position-wise Feed-Forward Networks (FFN)
+
+To understand the inner workings of this component, let's break down the name:
+
+- **"Feed-Forward"** - means a simple, vanilla multi-layer perceptron (MLP), where there are no loops or recursion (unlike RNNs) and the data only moves from input to output - strictly forward.
+
+- **"Position-Wise"** - means the exact same neural network is applied to each and every single token (position) independently and in parallel.
+
+FFN consists of two linear transformations that sandwich a non-linear transformation known as an activation function. This structure proposed by [1] of a FFN follows three crucial steps:
+
+**Step 1 - Expansion (W<sub>1</sub>):** Taking in an input vector of dimension, *d<sub>model</sub>* = 512, it is expanded 4x to a dimension, *d<sub>ff</sub>* = 2048. Why expansion? Projecting the input into a higher dimensional space allows the non-linear activation function explained below to disentangle complex, overlapping features within the token's representation.
+
+**Step 2 - Non-Linear Activation (ReLU):** An activation function, ReLU proposed by [1] is applied on to the expanded dimension output of W<sub>1</sub>.
+
+**Step 3 - Contraction (W<sub>2</sub>):** The second transformation shrinks down, or contracts the dimension, *d<sub>ff</sub>* back to dimension, *d<sub>model</sub>* (2048 → 512). This is done to maintain uniformity across the entire transformer block.
+
+Mathematically,
+
+```
+FFN(x) = Activation(xW_1 + b_1)W_2 + b_2
+```
+
+## Why do we need an FFN?
+
+We've lauded the concept of attention quite a bit during the course of this series, so then why are we still relying on a "neural network"?
+
+Self-attention is essentially a series of linear calculations, and according to math laws, a stack of linear operations (dot product, weighted sums, etc.) leads to just a bigger linear operation. Complex, real-world relationships (between words or tokens) are hard to understand with establishing just linear relationships. The activation layer in the FFN introduces non-linearity and is therefore, essential to learn sets of unpredictable, complex relationships.
+
+# Conclusion Remarks for 1st Node of the Series - How tf do LLMs work?
+
+If you sat through until this far, I'm extremely grateful to have taken you through this foundational journey of LLMs - the transformer model! From the history & limitation of previous algorithms to the (sometimes too) deep delve into all the individual components of the initial transformer architecture proposed in [1], it all fits together to create the building block of truly the technological innovation of our generation. While I have covered the foundational version of the architecture (from [1]), there are so many great optimisations that have been made to the transformer block since its inception in 2017 like FlashAttention, Mixture-of-Experts models, Rotary Positional Embeddings that you can go check out now that you know the basics of this brilliantly crafted architecture!
+
+---
+
+*I've written sports explainers and tech updates in the field of AI before, but a complete structural breakdown of the most talked about algorithm was new to me. And it was extremely fun! Therefore, I'm not going anywhere yet! This is just the foundational node of the entire series. Stay tuned for the next blog explainer series - **"How tf do LLMs Learn?"** Where I'll deep dive into the pre-training methods and principles used to train these billion-parameter LLMs, how the frontier models are trained on the entirety of publicly available internet and how the scaling law is applicable not only in inference scale and costs but also in the scale of training and the compute required for it!*
+
+
+*This is part 4 of the series 'How tf do LLMs work?'. Stay tuned for the next blog explainer series - 'How tf do LLMs Learn?'*
+
+## References
+
+[1] Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.
+
+[2] "Everything About Transformers" blog post by Krupa Dave - *Image Credits* (FFN Diagram)
+
