@@ -9,17 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
 
-type BlogPostMeta = {
-  slug: string
-  title?: string
-  description?: string
-  category?: string
-  date?: string
-  readTime?: string
-  tags?: string[]
-  gradient?: string
-  coverImage?: string
-}
+import { BlogPostMeta } from '@/lib/types'
 
 export default function BlogGrid({ posts }: { posts: BlogPostMeta[] }) {
   return (

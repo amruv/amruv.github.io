@@ -4,17 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import BlogGrid from '@/app/blog/BlogGrid.client'
 
-type BlogPostMeta = {
-  slug: string
-  title?: string
-  description?: string
-  category?: string
-  date?: string
-  readTime?: string
-  tags?: string[]
-  gradient?: string
-  coverImage?: string
-}
+import { BlogPostMeta } from '@/lib/types'
 
 const Blog = ({ posts }: { posts: BlogPostMeta[] }) => {
   return (
