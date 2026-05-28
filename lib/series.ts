@@ -13,6 +13,7 @@ export type SeriesMeta = {
   textColorClass: string
   borderColorClass: string
   badgeColorClass: string
+  consolidatedSlug?: string
 }
 
 export type SeriesWithPosts = SeriesMeta & {
@@ -31,7 +32,8 @@ export const SERIES_REGISTRY: Record<string, SeriesMeta> = {
     accentColor: '#CC5500',
     textColorClass: 'text-primary',
     borderColorClass: 'border-primary/50',
-    badgeColorClass: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:text-emerald-400 dark:border-emerald-500/30'
+    badgeColorClass: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:text-emerald-400 dark:border-emerald-500/30',
+    consolidatedSlug: 's1'
   },
   'exp-002': {
     seriesId: 'exp-002',

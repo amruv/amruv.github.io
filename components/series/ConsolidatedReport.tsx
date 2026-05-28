@@ -95,9 +95,13 @@ export default function ConsolidatedReport({ series, posts }: ConsolidatedReport
     )
   }
 
-  // Links to the first post as the entry point of the full experiment series
+  // Links to the consolidated report or the first post as the entry point of the series
+  const targetSlug = series.consolidatedSlug || activePosts[0]?.slug
+
+  if (!targetSlug) return <div aria-disabled="true">{content}</div>
+
   return (
-    <Link href={`/blog/${activePosts[0].slug}`} className="block focus:outline-none" role="link">
+    <Link href={`/blog/${targetSlug}`} className="block focus:outline-none" role="link">
       {content}
     </Link>
   )
