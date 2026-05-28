@@ -6,6 +6,18 @@ import { Badge } from '@/components/ui/badge'
 
 const experiences = [
   {
+    title: "Founder",
+    company: "ScoutSmart",
+    place: "Bengaluru",
+    period: "Jun 2025 – Present",
+    bullets: [
+      "Founded and built an AI-powered football scouting platform",
+      "Created a chat-based AI assistant integrated with real-time league data for tactical talent identification",
+      "Generated analytical graphs, performance charts, and comprehensive tactical profiles for player scouting"
+    ],
+    technologies: [],
+  },
+  {
     title: "Software Developer",
     company: "Oracle",
     place: "Bengaluru",
@@ -73,9 +85,8 @@ const Experience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative mb-12 md:mb-8 ${
-                index % 2 === 0 ? 'md:ml-auto md:pl-8' : 'md:mr-auto md:pr-8'
-              } md:w-1/2`}
+              className={`relative mb-12 md:mb-8 ${index % 2 === 0 ? 'md:ml-auto md:pl-8' : 'md:mr-auto md:pr-8'
+                } md:w-1/2`}
             >
               {/* Timeline dot */}
               <div className="absolute w-4 h-4 bg-primary rounded-full left-6 top-6 md:left-auto md:right-auto md:transform md:-translate-x-1/2 md:left-1/2"></div>
@@ -84,12 +95,12 @@ const Experience = () => {
               <div className="ml-16 md:ml-0 bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                   <h3 className="text-xl font-semibold text-primary test-font-mono">{exp.title}</h3>
-                  <span className="text-sm text-primary font-medium test-font-mono">{exp.period}<br/>{exp.place}</span>
+                  <span className="text-sm text-primary font-medium test-font-mono">{exp.period}<br />{exp.place}</span>
                   {/* <span className="text-sm text-primary font-medium test-font-mono">{exp.place}</span> */}
                 </div>
-                
+
                 <h4 className="text-lg text-bold text-accent mb-3 test-font-mono">{exp.company}</h4>
-                
+
                 {/* {exp.description && (
                   <p className="text-muted-foreground mb-3">{exp.description}</p>
                 )} */}
@@ -101,7 +112,7 @@ const Experience = () => {
                     ))}
                   </ul>
                 )}
-                
+
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, techIndex) => (
                     <Badge key={techIndex} variant="outline" className="text-xs">
