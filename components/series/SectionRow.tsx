@@ -35,7 +35,7 @@ export default function SectionRow({ post }: SectionRowProps) {
 
       {/* Content wrapper ensuring z-30 layout */}
       <div className="relative z-30 grid grid-cols-12 items-center gap-4">
-        {/* Column 1: Index Symbol (§N) - Collapses on mobile */}
+        {/* Column 1: Index Symbol (N) - Collapses on mobile */}
         <div className="hidden md:block md:col-span-1 text-center">
           <span className={`text-sm text-muted-foreground transition-colors test-font-inter ${hasImage ? 'group-hover:text-gray-300' : ''}`}>
             {post.part}
@@ -45,9 +45,9 @@ export default function SectionRow({ post }: SectionRowProps) {
         {/* Column 2: Content Area (Pill, Title, Muted description) */}
         <div className="col-span-9 md:col-span-9 flex flex-col items-start gap-1">
           <div className="flex items-center gap-2">
-            {/* Mobile inline §N index */}
+            {/* Mobile inline N index */}
             <span className={`md:hidden text-muted-foreground text-xs mr-1 transition-colors test-font-inter ${hasImage ? 'group-hover:text-gray-300' : ''}`}>
-              §{post.part}
+              {post.part}
             </span>
             <Badge
               variant="outline"

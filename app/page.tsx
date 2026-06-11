@@ -10,7 +10,7 @@ import Contact from '@/components/sections/contact'
 import { getBlogPosts } from '@/lib/series'
 
 export default function Home() {
-  const posts = getBlogPosts().slice(0, 6)
+  const posts = getBlogPosts()
 
   return (
     <main className="relative">
@@ -20,7 +20,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Publications />
-        <Blog posts={posts} />
+        <Blog posts={posts} maxGroups={6} />
         <Certifications />
         <Contact />
       </div>
@@ -38,4 +38,3 @@ export default function Home() {
     </main>
   )
 }
-

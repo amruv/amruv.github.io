@@ -6,7 +6,7 @@ import BlogGrid from '@/app/blog/BlogGrid.client'
 
 import { BlogPostMeta } from '@/lib/types'
 
-const Blog = ({ posts }: { posts: BlogPostMeta[] }) => {
+const Blog = ({ posts, maxGroups }: { posts: BlogPostMeta[]; maxGroups?: number }) => {
   return (
     <section id="blog" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
@@ -23,7 +23,7 @@ const Blog = ({ posts }: { posts: BlogPostMeta[] }) => {
           </p>
         </motion.div>
 
-        <BlogGrid posts={posts} />
+        <BlogGrid posts={posts} maxGroups={maxGroups} />
       </div>
     </section>
   )
