@@ -1,14 +1,7 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-
-const postsDir = path.join(process.cwd(), "content/blog/");
-
 import React from 'react'
 import Navigation from '@/components/navigation'
-import BlogGrid from './BlogGrid.client'
+import BlogViewSwitcher from './BlogViewSwitcher.client'
+import { getBlogPosts, getSeriesWithPosts } from '@/lib/series'
 
 // const blogPosts = [
 //   {
@@ -74,46 +67,13 @@ import BlogGrid from './BlogGrid.client'
 // ]
 
 export default function BlogPage() {
-  const files = fs.readdirSync(postsDir);
-
-  const posts = files
-    .filter((file) => file.endsWith(".mdx"))
-    .map((file) => {
-      const slug = file.replace(/\.mdx$/, "");
-      const source = fs.readFileSync(path.join(postsDir, file), "utf8");
-      const { data } = matter(source);
-      return { slug, ...data };
-    });
+  const seriesList = getSeriesWithPosts()
+  const posts = getBlogPosts()
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navigation />
-      
-      {/* Header */}
-      <div className="bg-background border-b border-border pt-20">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold mb-4 test-font-courier text-primary">
-              Blog
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto test-font-mono mb-6">
-              Sharing insights, tutorials, and thoughts on machine learning research and development
-            </p>
-            <div className="flex justify-center">
-              <Link href="/blog/series">
-                <Button variant="outline" size="sm" className="test-font-mono text-accent">
-                  🧪 View Lab Notebook Series
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Blog Posts Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <BlogGrid posts={posts as any} />
-      </div>
+      <BlogViewSwitcher posts={posts} seriesList={seriesList} />
     </main>
   )
 }

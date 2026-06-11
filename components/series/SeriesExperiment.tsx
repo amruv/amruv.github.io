@@ -19,7 +19,7 @@ export default function SeriesExperiment({ series }: SeriesExperimentProps) {
       {/* 2. Section Rows (List of posts within the series) */}
       <div className="flex flex-col">
         {series.posts.map((post) => (
-          <SectionRow key={post.slug} post={post} series={series} />
+          <SectionRow key={post.slug} post={post} />
         ))}
       </div>
 

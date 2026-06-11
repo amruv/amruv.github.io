@@ -13,5 +13,6 @@ export type BlogPostMeta = {
   seriesOrder?: number
   part?: number
   partTag?: string
+  totalParts?: number
   published?: boolean
 }

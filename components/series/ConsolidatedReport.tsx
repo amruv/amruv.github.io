@@ -14,7 +14,7 @@ interface ConsolidatedReportProps {
 
 export default function ConsolidatedReport({ series, posts }: ConsolidatedReportProps) {
   const isComplete = series.status === 'complete'
-  
+
   // Calculate total reading time from all published parts
   const activePosts = posts.filter(p => p.published !== false)
   const totalMinutes = activePosts.reduce((acc, p) => {
@@ -27,11 +27,10 @@ export default function ConsolidatedReport({ series, posts }: ConsolidatedReport
   const hasImage = !!coverImage
 
   const content = (
-    <div className={`relative w-full p-5 transition-all duration-300 overflow-hidden border-t border-border rounded-b-xl ${
-      isComplete 
-        ? 'cursor-pointer bg-secondary/30 hover:bg-secondary/40 dark:bg-card/20 dark:hover:bg-card/30 group' 
-        : 'opacity-40 select-none bg-secondary/10 dark:bg-card/10'
-    }`}>
+    <div className={`relative w-full p-5 transition-all duration-300 overflow-hidden border-t border-border rounded-b-xl ${isComplete
+      ? 'cursor-pointer bg-card hover:bg-card/50 group'
+      : 'opacity-40 select-none bg-card'
+      }`}>
       {/* Cover image overlay on hover (Reused from BlogGrid.client.tsx) */}
       {isComplete && hasImage && (
         <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none overflow-hidden">
@@ -51,19 +50,19 @@ export default function ConsolidatedReport({ series, posts }: ConsolidatedReport
         {/* Left Side: File Icon, Title, and parts/time breakdown */}
         <div className="flex items-start gap-4">
           <div className={`p-2.5 rounded-lg border bg-card/80 dark:bg-card/40 border-border shrink-0 transition-colors group-hover:bg-white/10 group-hover:border-white/20`}>
-            <FileText className={`w-5 h-5 ${isComplete ? series.textColorClass + ' group-hover:text-white' : 'text-muted-foreground'}`} />
+            <FileText className={`w-5 h-5 ${isComplete ? hasImage ? 'text-primary group-hover:text-white' : 'text-primary' : 'text-muted-foreground'}`} />
           </div>
           <div>
-            <span className={`text-[10px] font-mono tracking-widest font-semibold ${isComplete ? series.textColorClass + ' group-hover:text-white/80' : 'text-muted-foreground'}`}>
-              LAB SUMMARY
+            <span className={`text-xs test-font-mono transition-colors ${isComplete ? hasImage ? 'text-muted-foreground group-hover:text-gray-300' : 'text-muted-foreground' : 'text-muted-foreground'}`}>
+              {isComplete ? 'Complete Series' : 'Incomplete Series'}
             </span>
-            <h4 className={`text-base font-bold font-sans transition-colors ${isComplete ? 'text-card-foreground dark:text-secondary-foreground group-hover:text-white' : 'text-muted-foreground'}`}>
-              Consolidated report — full experiment
+            <h4 className={`text-base font-semibold leading-tight transition-colors test-font-mono ${isComplete ? hasImage ? 'text-primary group-hover:text-white group-hover:drop-shadow-md' : 'text-primary' : 'text-muted-foreground'}`}>
+              {series.title} - {isComplete ? 'Full Blog' : 'In Progress'}
             </h4>
-            <p className={`text-xs font-mono transition-colors ${isComplete ? 'text-muted-foreground group-hover:text-white/60' : 'text-muted-foreground/60'}`}>
-              {isComplete 
-                ? `§1 through §${posts.length} · ~${totalMinutes} min total read`
-                : `§1 through §${series.totalParts} · PENDING COMPLETION`
+            <p className={`text-sm transition-colors test-font-inter ${isComplete ? hasImage ? 'text-muted-foreground group-hover:text-gray-200' : 'text-muted-foreground' : 'text-muted-foreground/60'}`}>
+              {isComplete
+                ? `Parts 1 through ${posts.length} · ${totalMinutes} min total read`
+                : `Parts 1 through ${series.totalParts} · PENDING COMPLETION`
               }
             </p>
           </div>
@@ -72,13 +71,13 @@ export default function ConsolidatedReport({ series, posts }: ConsolidatedReport
         {/* Right Side: Action CTA or Pending */}
         <div className="flex items-center self-start md:self-auto shrink-0 font-mono text-sm font-semibold">
           {isComplete ? (
-            <div className={`flex items-center gap-1.5 transition-colors ${series.textColorClass} group-hover:text-white`}>
-              <span>READ REPORT</span>
+            <div className={`flex items-center gap-1.5 transition-colors test-font-inter ${hasImage ? 'text-accent group-hover:text-white' : 'text-accent'}`}>
+              <span>Read report</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
           ) : (
-            <span className="text-muted-foreground uppercase tracking-widest text-xs font-bold bg-zinc-500/10 px-2 py-0.5 rounded border border-zinc-500/20">
-              PENDING
+            <span className="text-xs font-medium text-muted-foreground">
+              Pending
             </span>
           )}
         </div>

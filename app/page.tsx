@@ -1,6 +1,3 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
 import React from 'react'
 import Navigation from '@/components/navigation'
 import Hero from '@/components/sections/hero'
@@ -10,19 +7,10 @@ import Publications from '@/components/sections/publications'
 import Blog from '@/components/sections/blog'
 import Certifications from '@/components/sections/certifications'
 import Contact from '@/components/sections/contact'
+import { getBlogPosts } from '@/lib/series'
 
 export default function Home() {
-  const postsDir = path.join(process.cwd(), 'content/blog/')
-  const files = fs.readdirSync(postsDir)
-  const posts = files
-    .filter((file) => file.endsWith('.mdx'))
-    .map((file) => {
-      const slug = file.replace(/\.mdx$/, '')
-      const source = fs.readFileSync(path.join(postsDir, file), 'utf8')
-      const { data } = matter(source)
-      return { slug, ...data }
-    })
-    .slice(0, 6)
+  const posts = getBlogPosts().slice(0, 6)
 
   return (
     <main className="relative">
@@ -32,7 +20,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Publications />
-        <Blog posts={posts as any} />
+        <Blog posts={posts} />
         <Certifications />
         <Contact />
       </div>
@@ -50,5 +38,4 @@ export default function Home() {
     </main>
   )
 }
-
 
