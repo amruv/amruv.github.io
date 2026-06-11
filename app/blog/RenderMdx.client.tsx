@@ -28,7 +28,7 @@ const components = {
     <a className="text-primary underline hover:no-underline" {...props} />
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => (
-    <code className="px-1.5 py-0.5 rounded bg-muted text-foreground text-[0.9em]" {...props} />
+    <code className="px-1.5 py-0.5 rounded bg-muted text-background text-[0.9em]" {...props} />
   ),
   pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
     <pre className="mb-4 p-4 rounded bg-muted text-foreground overflow-x-auto" {...props} />
