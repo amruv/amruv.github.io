@@ -16,12 +16,23 @@ const Navigation = () => {
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'publications', label: 'Publications' },
-    { id: 'blog', label: 'Blog' },
+    { id: 'blog', label: 'Blog', href: '/blog' },
     { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' }
   ]), [])
 
   useEffect(() => {
+    if (pathname === '/blog' || pathname.startsWith('/blog/')) {
+      setActiveSection('blog')
+      const handleScrollProgress = () => {
+        const progress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+        setScrollProgress(progress)
+      }
+      window.addEventListener('scroll', handleScrollProgress)
+      handleScrollProgress()
+      return () => window.removeEventListener('scroll', handleScrollProgress)
+    }
+
     const handleScroll = () => {
       const sections = navItems.map(item => document.getElementById(item.id))
       const scrollPosition = window.scrollY + 100
@@ -49,7 +60,7 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll)
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [navItems])
+  }, [navItems, pathname])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -66,7 +77,7 @@ const Navigation = () => {
   }
 
   return (
-    <motion.nav 
+    <motion.nav
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -75,7 +86,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <motion.div className="relative">
-            <motion.div 
+            <motion.div
               className="text-2xl  text-primary test-font-courier whitespace-nowrap"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -99,28 +110,29 @@ const Navigation = () => {
               transition={{ ease: "easeOut", duration: 0.2 }}
             />
           </motion.div>
-          
+
           <div className="hidden lg:flex space-x-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 onClick={() => {
-                  if (pathname === '/') {
+                  if (item.href) {
+                    window.location.href = item.href
+                  } else if (pathname === '/') {
                     scrollToSection(item.id)
                   } else {
                     // Navigate to homepage with hash
                     window.location.href = `/#${item.id}`
                   }
                 }}
-                className={`relative px-3 py-2 text-sm test-font-courier transition-colors hover:text-accent ${
-                  activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
-                }`}
+                className={`relative px-3 py-2 text-sm test-font-courier transition-colors hover:text-accent ${activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
+                  }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
               >
                 {/* active section underline */}
-                {item.label} 
+                {item.label}
                 {activeSection === item.id && (
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
@@ -156,17 +168,18 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => { 
-                  if (pathname === '/') {
+                onClick={() => {
+                  if (item.href) {
+                    window.location.href = item.href
+                  } else if (pathname === '/') {
                     scrollToSection(item.id)
                   } else {
                     window.location.href = `/#${item.id}`
                   }
-                  setMenuOpen(false) 
+                  setMenuOpen(false)
                 }}
-                className={`block w-full text-left px-2 py-2 text-sm test-font-courier transition-colors ${
-                  activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
-                }`}
+                className={`block w-full text-left px-2 py-2 text-sm test-font-courier transition-colors ${activeSection === item.id ? 'text-accent' : 'text-muted-foreground'
+                  }`}
               >
                 {item.label}
               </button>
