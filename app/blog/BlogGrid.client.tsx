@@ -155,7 +155,7 @@ function SeriesBlogGroup({ parent, seriesPosts, index }: { parent: BlogPostMeta;
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <div className="flex gap-4 items-start relative w-full">
+      <div className="flex gap-4 items-stretch relative w-full">
         {/* Toggle + Parent card group – items-center keeps button at exact vertical center of parent card */}
         <div className="flex items-center gap-4 w-full md:w-auto md:shrink-0">
           <motion.button
@@ -174,7 +174,7 @@ function SeriesBlogGroup({ parent, seriesPosts, index }: { parent: BlogPostMeta;
 
           {/* Parent card wrapper */}
           <motion.div
-            className="relative z-10 flex-1 min-w-0 md:flex-none md:w-[280px] lg:w-[320px]"
+            className="relative z-10 flex-1 min-w-0 md:flex-none md:w-[280px] lg:w-[320px] self-stretch"
           >
             <BlogPostCard
               post={parent}
