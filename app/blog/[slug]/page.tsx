@@ -8,6 +8,7 @@ import { Calendar, Clock, ArrowLeft, Share2, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ThemeToggle from "@/components/ui/theme-toggle";
+import BlogPostNavigation from "@/components/ui/BlogPostNavigation";
 
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "content/blog");
@@ -114,6 +115,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* <MdxPost content={content} frontmatter={data} /> */}
           <MdxPost slug={params.slug} />
         </div>
+
+        {/* Blog Post Navigation */}
+        <BlogPostNavigation slug={params.slug} />
       </div>
     </main>
   );

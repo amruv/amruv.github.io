@@ -208,3 +208,95 @@ export function getSeriesWithPosts(): SeriesWithPosts[] {
   // Sort series by seriesOrder
   return seriesList.sort((a, b) => a.seriesOrder - b.seriesOrder)
 }
+
+// ── Navigation helpers ──────────────────────────────────────────────────
+
+export type NavLink = { slug: string; title: string }
+
+export type ChildNavigation = {
+  prev: NavLink | null
+  next: NavLink | null
+  currentIndex: number
+  posts: { slug: string; title: string; published: boolean }[]
+  seriesTitle: string
+}
+
+export type GlobalNavigation = {
+  prev: NavLink | null
+  next: NavLink | null
+  currentIndex: number
+  posts: { slug: string; title: string }[]
+}
+
+/**
+ * Navigation for child blogs (e.g. s1e2) within their series.
+ * Only published children are navigable; placeholders are shown as inactive dots.
+ */
+export function getChildNavigation(slug: string): ChildNavigation | null {
+  const parsed = parseSeriesSlug(slug)
+  if (!parsed || parsed.kind !== 'part') return null
+
+  const seriesList = getSeriesWithPosts()
+  const series = seriesList.find((s) => s.seriesOrder === parsed.seriesNumber)
+  if (!series) return null
+
+  const allParts = series.posts.map((p) => ({
+    slug: p.slug,
+    title: p.title || `Part ${p.part}`,
+    published: p.published !== false
+  }))
+
+  const publishedParts = allParts.filter((p) => p.published)
+  const currentPublishedIndex = publishedParts.findIndex((p) => p.slug === slug)
+  if (currentPublishedIndex === -1) return null
+
+  return {
+    prev: currentPublishedIndex > 0
+      ? { slug: publishedParts[currentPublishedIndex - 1].slug, title: publishedParts[currentPublishedIndex - 1].title }
+      : null,
+    next: currentPublishedIndex < publishedParts.length - 1
+      ? { slug: publishedParts[currentPublishedIndex + 1].slug, title: publishedParts[currentPublishedIndex + 1].title }
+      : null,
+    currentIndex: currentPublishedIndex,
+    posts: allParts,
+    seriesTitle: series.title
+  }
+}
+
+/**
+ * Navigation for parent (consolidated) and standalone blogs.
+ * Builds a global timeline sorted by date descending (newest first).
+ * Child blogs (sNe*) are excluded per design requirement.
+ */
+export function getGlobalNavigation(slug: string): GlobalNavigation | null {
+  const posts = getBlogPosts()
+
+  // Include only consolidated (parent) and standalone (non-series) posts
+  const globalPosts = posts
+    .filter((post) => {
+      const parsed = parseSeriesSlug(post.slug)
+      // Include if: not a series slug at all (standalone), or a consolidated parent
+      return !parsed || parsed.kind === 'consolidated'
+    })
+    .filter((post) => post.published !== false)
+    .sort((a, b) => {
+      // Sort by date descending (newest first)
+      const dateA = a.date ? new Date(a.date).getTime() : 0
+      const dateB = b.date ? new Date(b.date).getTime() : 0
+      return dateB - dateA
+    })
+
+  const currentIndex = globalPosts.findIndex((p) => p.slug === slug)
+  if (currentIndex === -1) return null
+
+  return {
+    prev: currentIndex < globalPosts.length - 1
+      ? { slug: globalPosts[currentIndex + 1].slug, title: globalPosts[currentIndex + 1].title || globalPosts[currentIndex + 1].slug }
+      : null,
+    next: currentIndex > 0
+      ? { slug: globalPosts[currentIndex - 1].slug, title: globalPosts[currentIndex - 1].title || globalPosts[currentIndex - 1].slug }
+      : null,
+    currentIndex,
+    posts: globalPosts.map((p) => ({ slug: p.slug, title: p.title || p.slug }))
+  }
+}
