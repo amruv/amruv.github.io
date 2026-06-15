@@ -8,14 +8,18 @@ import Blog from '@/components/sections/blog'
 import Certifications from '@/components/sections/certifications'
 import Contact from '@/components/sections/contact'
 import { getBlogPosts } from '@/lib/series'
+import ShaderGradientBg from '@/components/ui/shader-gradient-bg'
 
 export default function Home() {
   const posts = getBlogPosts()
 
   return (
     <main className="relative">
+      {/* Full-page animated WebGL gradient background (fixed behind all content) */}
+      <ShaderGradientBg />
+
       <Navigation />
-      <div className="space-y-0">
+      <div className="space-y-0 relative z-10">
         <Hero />
         <Experience />
         <Projects />
@@ -26,7 +30,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-secondary/50 py-8 mt-20">
+      <footer className="relative z-10 py-8 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="test-font-mono text-primary">
             © 2026 Sai Amruth Balusu.

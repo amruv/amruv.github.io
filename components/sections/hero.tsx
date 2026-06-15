@@ -5,14 +5,11 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Github, Linkedin, Mail, Download } from 'lucide-react'
 import TypingAnimation from '@/components/ui/typing effect'
-import ShaderGradientBg from '@/components/ui/shader-gradient-bg'
 // import GeometricBackground from '@/components/ui/geometric-background'
 
 const Hero = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-      {/* Animated WebGL gradient background */}
-      <ShaderGradientBg />
+    <section id="about" className="min-h-screen flex items-center justify-center pt-20 relative">
       {/* <GeometricBackground /> */}
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

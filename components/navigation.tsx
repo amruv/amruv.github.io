@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from '@/components/ui/theme-toggle'
+import GradientToggle from '@/components/ui/gradient-toggle'
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('')
@@ -142,11 +143,13 @@ const Navigation = () => {
                 )}
               </motion.button>
             ))}
+            <GradientToggle />
             <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
           <div className="flex items-center gap-2 lg:hidden">
+            <GradientToggle />
             <ThemeToggle />
             <button className="text-foreground md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

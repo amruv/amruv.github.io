@@ -2,6 +2,7 @@
 
 import React from 'react'
 import dynamic from 'next/dynamic'
+import { useGradient } from '@/components/gradient-provider'
 
 // Dynamically import ShaderGradient components with SSR disabled
 // This is required because Three.js / WebGL APIs are browser-only
@@ -17,9 +18,20 @@ const ShaderGradient = dynamic(
 )
 
 const ShaderGradientBg: React.FC = () => {
+  const { isAnimating } = useGradient()
+
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden" style={{ zIndex: 0 }}>
-      {/* The gradient canvas fills the hero section */}
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 0,
+        pointerEvents: 'none',
+      }}
+    >
       <ShaderGradientCanvas
         style={{
           position: 'absolute',
@@ -27,11 +39,10 @@ const ShaderGradientBg: React.FC = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          pointerEvents: 'none',
         }}
       >
         <ShaderGradient
-          animate="on"
+          animate={isAnimating ? 'on' : 'off'}
           brightness={1.2}
           cAzimuthAngle={180}
           cDistance={3.59}
@@ -65,14 +76,6 @@ const ShaderGradientBg: React.FC = () => {
           zoomOut={false}
         />
       </ShaderGradientCanvas>
-
-      {/* Bottom fade — smooth transition into the next section */}
-      <div
-        className="absolute bottom-0 left-0 w-full h-32 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, transparent, var(--background))',
-        }}
-      />
     </div>
   )
 }

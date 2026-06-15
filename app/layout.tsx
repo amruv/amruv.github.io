@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import ThemeProvider from '@/components/theme-provider'
+import GradientProvider from '@/components/gradient-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -62,9 +63,11 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="min-h-screen bg-background text-foreground">
-            {children}
-          </div>
+          <GradientProvider>
+            <div className="min-h-screen bg-background text-foreground">
+              {children}
+            </div>
+          </GradientProvider>
         </ThemeProvider>
       </body>
     </html>
